@@ -13,6 +13,7 @@ import {SiNextdotjs} from 'react-icons/si'
 import { SiReact } from 'react-icons/si'
 import { SiTypescript} from 'react-icons/si'
 import { SiJavascript } from 'react-icons/si'
+import { SiHtml5 } from 'react-icons/si'
 import { SiTailwindcss } from 'react-icons/si'
 import { SiCss3 } from 'react-icons/si'
 import { SiSass } from 'react-icons/si'
@@ -45,9 +46,9 @@ export default async function Home() {
 
       <section className={`${mainFont.className}  h-screen w-full justify-center flex`}>
         <div className='flex flex-col mt-44'>
-        <h1 className={` text-amber-100 text-4xl mx-auto md:text-8xl border-b-2 border-b-amber-100 font-light`}>TIMOTHY FAWCETT</h1>
+        <h1 className={` text-amber-100 text-2xl xs:text-4xl mx-auto sm:text-6xl md:text-7xl xl:text-9xl border-b-2 border-b-amber-100 font-light`}>TIMOTHY FAWCETT</h1>
         <br />
-        <h2 className="text-2xl md:text-7xl text-amber-100 mx-auto mt-4"> Web Developer</h2>
+        <h2 className="text-2xl md:text-5xl xl:text-7xl text-amber-100 mx-auto mt-4"> Web Developer</h2>
         <p className={`${roboto.className} text-xs md:text-base font-light text-amber-100 mx-auto mt-4`}>Building where the possibilities are infinite.</p>
         <span className='mx-auto mt-4 scale-75 dark:hidden'>
           <InfiniteCode />
@@ -65,8 +66,8 @@ export default async function Home() {
       </div>
       </section>
 
-      <section className="h-screen w-full bg-amber-100">
-      <h2 className={`${mainFont.className} flex justify-center text-4xl md:text-6xl mt-14 underline text-zinc-800`}>
+      <section id='projects-section' className="h-screen w-full bg-amber-100 overflow-hidden">
+      <h2 className={`${mainFont.className} flex justify-center text-4xl md:text-6xl mt-14 mb-40 md:mb-30 lg:mb-20 underline text-zinc-800`}>
         Projects
         </h2>
         <Suspense fallback={<Loading/>}>
@@ -74,18 +75,18 @@ export default async function Home() {
         </Suspense>
     </section>
 
-      <section className='h-screen w-full bg-zinc-800 flex  flex-col justify-center md:flex-row md:justify-between'>
+      <section id='about-section' className='h-screen w-full bg-zinc-800 flex  flex-col justify-center md:flex-row md:justify-between overflow-hidden'>
         <div className='m-4 md:ml-20 mx-auto md:w-2/5 mt-10 md:mt-40 h-1/2 md:h-full'>
-          <Image src={'/webDevDisplay.jpeg'} alt={'Timothy Fawcett'} height={200} width={200} className='mx-auto md:ml-16 rounded-full scale-50 md:scale-100 filter sepia contrast-75 brightness-90 md:mb-10'></Image>
-          <p className={`${mainFont.className} text-amber-100 mx-6 md:text-xl text-center md:text-left`}>G'day, I'm Tim! A self-taught developer working remotely from beautiful Northern Tasmania. Before discovering my love for web development, I spent most of my life traveling and working in a wide variety of industries and jobs, primarily in marine tourism, hospitality, and wine, along with plenty of hard yakka to get by along the way. I am currently diving deep into design and SEO and am always open to learning new tech! <br /> <br /> I am currently building with...</p>
+          <Image src={'/webDevDisplay.jpeg'} alt={'Timothy Fawcett'} height={200} width={200} className='mx-auto lg:ml-16 rounded-full scale-50 md:scale-100 filter sepia contrast-75 brightness-90 md:mb-10'></Image>
+          <p className={`${mainFont.className} text-amber-100 mx-6 text-xs xs:text-sm md:text-md xl:text-xl text-center md:text-left`}>G'day, I'm Tim! A self-taught developer working remotely from beautiful Northern Tasmania. Before discovering my love for web development, I spent most of my life traveling and working in a wide variety of industries and jobs, primarily in marine tourism, hospitality, and wine, along with plenty of hard yakka to get by along the way. I am currently diving deep into design and SEO and am always open to learning new tech! <br /> <br /> I am currently building with...</p>
         </div>
-        <div className="relative h-2/5 sm:h-2/3 w-2/3 rounded-full my-auto scale-50 sm:scale-75 md:scale-100 mx-auto">
+        <div className="relative h-2/5 sm:h-2/3 w-2/3 rounded-full my-auto scale-50 sm:scale-75 lg:scale-100 mx-auto">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-100 via-zinc-800 to-zinc-800 blur-3xl rounded-full">
           </div>
           <div className="absolute inset-0 flex justify-center items-center animate-spin-slow">
-            {[...Array(7)].map((_, i) => {
-              const Icon = [SiNextdotjs, SiReact, SiTypescript, SiJavascript, SiCss3, SiSass, SiTailwindcss][i];
-              const rotate = (i * (360 / 7)) - 90;
+            {[...Array(8)].map((_, i) => {
+              const Icon = [SiNextdotjs, SiReact, SiTypescript, SiJavascript, SiHtml5, SiCss3, SiSass, SiTailwindcss][i];
+              const rotate = (i * (360 / 8)) - 90;
               return (
                 <div key={i} className="absolute w-1/3 h-full flex justify-center" style={{ transform: `rotate(${rotate}deg)` }}>
                   <Icon className=' fill-amber-100 h-16 w-16 animate-bounce'/>

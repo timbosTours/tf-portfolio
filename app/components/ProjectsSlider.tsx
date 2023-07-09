@@ -13,10 +13,11 @@ type Project = {
     url: string;
     image: string;
     name: string;
+    slug: string
     };
 
 const carousel: KeenSliderPlugin = (slider) => {
-    const z = 500;
+    const z = 525;
     function rotate() {
         // Check if slider.track.details is not null before using it
         if (slider.track && slider.track.details) {
@@ -62,14 +63,14 @@ export default function ProjectsSlider() {
     }, []);
 
     return (
-        <div key={projects.length} className="wrapper m-10">
+        <div key={projects.length} className="wrapper">
             <div className="scene ">
                 <div className="carousel keen-slider " ref={sliderRef}>
                     {projects.map((project) => (
                         <div key={project._id} className="carousel__cell ">
-                        <a href={project.url}>
-                            <img className="rounded-lg drop-shadow-2xl" src={project.image} alt={project.name} width="500" height="200" />
-                        </a>
+                        <a href={`projects/${project.slug}`}>
+                            <img className="rounded-3xl" src={project.image} alt={project.name} width="500" height="200" />
+                            </a>
                         </div>
                     ))}
                 </div>

@@ -21,10 +21,12 @@ export default function NavBar() {
                 <TfLogoPro />
             </div>
             <nav className={`${roboto.className} flex m-4 font`}>
-                <Link href={'/'} className="mx-4">About</Link>
-                <Link href={'/'} className="mx-4">Contact</Link>
+                <Link href={'/'} className="mx-4">Home</Link>
+                <Link href="#projects-section" className="mx-4">Projects</Link>
+                <Link href="#about-section" className="mx-4">About</Link>
+                <Link href={'/contact'} className="mx-4">Contact</Link>
                     <span className="mx-4">
-                        <ThemeSwitcher />
+                        {/* <ThemeSwitcher /> */}
                     </span>
             </nav>
         </div>
