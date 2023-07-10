@@ -2,7 +2,6 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import { Antic_Didone} from 'next/font/google';
 import { Roboto } from 'next/font/google';
-import { Carter_One } from 'next/font/google';
 import InfiniteCode from './components/InfiniteCode';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -31,11 +30,6 @@ const roboto = Roboto({
   subsets: ['latin']
 })
 
-const carter = Carter_One({
-  weight: '400',
-  subsets: ['latin']
-})
-
 
 
 export default async function Home() {
@@ -44,7 +38,7 @@ export default async function Home() {
     <main className="flex w-full min-h-full flex-col items-center justify-between m-0 bg-zinc-800 dark:bg-mountbattenpink-700">
       <NavBar/>
 
-      <section className={`${mainFont.className}  h-screen w-full justify-center flex`}>
+      <section className={`${mainFont.className}  min-h-screen w-full justify-center flex`}>
         <div className='flex flex-col mt-44'>
         <h1 className={` text-amber-100 text-2xl xs:text-4xl mx-auto sm:text-6xl md:text-7xl xl:text-9xl border-b-2 border-b-amber-100 font-light`}>TIMOTHY FAWCETT</h1>
         <br />
@@ -58,16 +52,16 @@ export default async function Home() {
           
           <p className={`${roboto.className} text-amber-100 font-light`}>Tasmania, Australia</p>
           <span className='flex flex-row ml-4'>
-            <AiOutlineGithub className='fill-amber-100 mx-2 h-6 w-6'/>
-            <AiFillLinkedin className='fill-amber-100 mx-2 h-6 w-6'/>
-            <AiOutlineTwitter className='fill-amber-100 mx-2 h-6 w-6'/>
+            <Link href={'https://github.com/timbosTours'} target="_blank"><AiOutlineGithub className='fill-amber-100 mx-2 h-6 w-6'/></Link>
+            <Link href={'https://www.linkedin.com/in/timothyfawcett89/'} target="_blank"><AiFillLinkedin className='fill-amber-100 mx-2 h-6 w-6'/></Link>
+            <Link href={'https://twitter.com/timbosTours'} target="_blank"><AiOutlineTwitter className='fill-amber-100 mx-2 h-6 w-6'/></Link>
           </span>
         </span>
       </div>
       </section>
 
-      <section id='projects-section' className="h-screen w-full bg-amber-100 overflow-hidden">
-      <h2 className={`${mainFont.className} flex justify-center text-4xl md:text-6xl mt-14 mb-40 md:mb-30 lg:mb-20 underline text-zinc-800`}>
+      <section id='projects-section' className="min-h-screen w-full bg-amber-100 overflow-hidden">
+      <h2 className={`${roboto.className} flex justify-center text-4xl md:text-6xl mt-14 mb-40 md:mb-30 lg:mb-20 underline text-zinc-800`}>
         Projects
         </h2>
         <Suspense fallback={<Loading/>}>
@@ -75,7 +69,7 @@ export default async function Home() {
         </Suspense>
     </section>
 
-      <section id='about-section' className='h-screen w-full bg-zinc-800 flex  flex-col justify-center md:flex-row md:justify-between overflow-hidden'>
+      <section id='about-section' className='h-screen w-full bg-zinc-800 flex  flex-col flex-grow justify-center md:flex-row md:justify-between overflow-hidden'>
         <div className='m-4 md:ml-20 mx-auto md:w-2/5 mt-10 md:mt-40 h-1/2 md:h-full'>
           <Image src={'/webDevDisplay.jpeg'} alt={'Timothy Fawcett'} height={200} width={200} className='mx-auto lg:ml-16 rounded-full scale-50 md:scale-100 filter sepia contrast-75 brightness-90 md:mb-10'></Image>
           <p className={`${mainFont.className} text-amber-100 mx-6 text-xs xs:text-sm md:text-md xl:text-xl text-center md:text-left`}>G'day, I'm Tim! A self-taught developer working remotely from beautiful Northern Tasmania. Before discovering my love for web development, I spent most of my life traveling and working in a wide variety of industries and jobs, primarily in marine tourism, hospitality, and wine, with plenty of hard yakka to get by along the way. I am currently diving deep into design and SEO and am always open to learning new tech! <br /> <br /> I am currently building with...</p>

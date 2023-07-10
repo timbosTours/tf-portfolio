@@ -38,6 +38,8 @@ const carousel: KeenSliderPlugin = (slider) => {
     slider.on("detailsChanged", rotate);
 };
 
+const animation = { duration: 9000, easing: (t: number) => t }
+
 
 export default function ProjectsSlider() {
     const [projects, setProjects] = useState<Project[]>([]);
@@ -48,6 +50,15 @@ export default function ProjectsSlider() {
         selector: ".carousel__cell",
         renderMode: "custom",
         mode: "snap",
+        created(s) {
+        s.moveToIdx(5, true, animation)
+        },
+        updated(s) {
+        s.moveToIdx(s.track.details.abs + 5, true, animation)
+        },
+        animationEnded(s) {
+        s.moveToIdx(s.track.details.abs + 5, true, animation)
+        },
         },
         [carousel]
     );
@@ -73,6 +84,7 @@ export default function ProjectsSlider() {
                             </a>
                         </div>
                     ))}
+                    
                 </div>
             </div>
         </div>
