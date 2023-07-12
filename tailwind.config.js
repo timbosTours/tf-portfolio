@@ -41,6 +41,16 @@ module.exports = {
       animation: {
         'spin-slow': 'spin 9s linear infinite',
       },
+      animation: {
+        'bounce-delay-1': 'bounce 1s infinite',
+        'bounce-delay-2': 'bounce 1s 0.1s infinite',
+        'bounce-delay-3': 'bounce 1s 0.2s infinite',
+        'bounce-delay-4': 'bounce 1s 0.3s infinite',
+        'bounce-delay-5': 'bounce 1s 0.4s infinite',
+        'bounce-delay-6': 'bounce 1s 0.5s infinite',
+        'bounce-delay-7': 'bounce 1s 0.6s infinite',
+        'bounce-delay-8': 'bounce 1s 0.7s infinite',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

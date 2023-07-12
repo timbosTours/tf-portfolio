@@ -28,7 +28,7 @@ export default function TfLogo() {
                 <div 
                     className="rounded-full absolute inset-0 border-t-2 border-b-2 transition-all duration-500 rotate-45" 
                     style={{
-                        borderColor: '#B2CEDE', 
+                        borderColor: '#27272a', 
                         opacity: hover ? 0 : 1, 
                         transition: 'opacity 1s'
                     }}
@@ -37,13 +37,13 @@ export default function TfLogo() {
                 <div 
                     className="rounded-full absolute inset-0 border-l-2 border-r-2 transition-all duration-500 rotate-45" 
                     style={{
-                        borderColor: '#B2CEDE', 
+                        borderColor: '#27272a', 
                         opacity: hover ? 1 : 0, 
                         transition: 'opacity 1s'
                     }}
                 >
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center text-2xl font-thin p-1 hover:animate-pulse text-colors-columbiaBlue-700">
+                <div className="absolute inset-0 flex items-center justify-center text-2xl font-thin p-1 hover:animate-pulse bg-gradient-to-t from-white via-columbiaBlue-500 to-columbiaBlue-700 bg-clip-text text-transparent">
                     TF
                 </div>
             </span>

@@ -23,8 +23,8 @@ export const ThemeSwitcher = () => {
 
     return (
         <div>
-            <button className="dark:hidden" onClick={toggleTheme}>Too Serious?</button>
-            <button className="hidden dark:block" onClick={toggleTheme}>Too Chill?</button>
+            <button className="text-xl sm:text-base dark:hidden mx-auto sm:ml-4 md:mr-0 my-5 sm:my-0" onClick={toggleTheme}>Too Serious?</button>
+            <button className="text-xl sm:text-base hidden dark:block mx-auto sm:ml-4 md:mr-0 my-5 sm:my-0" onClick={toggleTheme}>Too Chill?</button>
         </div>
     )
 }

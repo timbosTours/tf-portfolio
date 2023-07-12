@@ -49,16 +49,7 @@ export default function ProjectsSlider() {
         loop: true,
         selector: ".carousel__cell",
         renderMode: "custom",
-        mode: "snap",
-        created(s) {
-        s.moveToIdx(5, true, animation)
-        },
-        updated(s) {
-        s.moveToIdx(s.track.details.abs + 5, true, animation)
-        },
-        animationEnded(s) {
-        s.moveToIdx(s.track.details.abs + 5, true, animation)
-        },
+            mode: "snap",
         },
         [carousel]
     );
@@ -84,9 +75,9 @@ export default function ProjectsSlider() {
                             </a>
                         </div>
                     ))}
-                    
                 </div>
             </div>
+
         </div>
     );
 }
