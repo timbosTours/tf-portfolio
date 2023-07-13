@@ -19,7 +19,7 @@ export default function TfLogo() {
     
     return (
         <div className='m-2'>
-        <Link href={'/'} className={carter.className}>
+        <Link tabIndex={-1} href={'/'} className={carter.className}>
             <span 
                 className="relative h-12 w-12 inline-block " 
                 onMouseEnter={() => setHover(true)} 

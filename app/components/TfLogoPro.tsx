@@ -16,7 +16,7 @@ export default function TfLogoPro() {
     
     return (
         <div className='m-2'>
-        <Link href={'/'} className={mainFont.className}>
+        <Link tabIndex={-1} href={'/'} className={mainFont.className}>
             <span 
                 className="relative h-12 w-12 inline-block " 
                 onMouseEnter={() => setHover(true)} 

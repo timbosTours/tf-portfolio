@@ -19,9 +19,9 @@ export default function Footer() {
                 <Link href={'/contact'} className="my-5 text-amber-100 dark:text-columbiaBlue-700 md:text-lg">Contact</Link>
             </nav>
             <div className='flex flex-row justify-center mt-8 md:mt-6'>
-            <Link href={'https://github.com/timbosTours'} target="_blank"><AiOutlineGithub className='fill-amber-100 dark:fill-columbiaBlue-700 mx-2 h-6 w-6 md:h-10 md:w-10'/></Link>
-            <Link href={'https://www.linkedin.com/in/timothyfawcett89/'} target="_blank"><AiFillLinkedin className='fill-amber-100 dark:fill-columbiaBlue-700 mx-2 h-6 w-6 md:h-10 md:w-10'/></Link>
-            <Link href={'https://twitter.com/timbosTours'} target="_blank"><AiOutlineTwitter className='fill-amber-100 dark:fill-columbiaBlue-700 mx-2 h-6 w-6 md:h-10 md:w-10'/></Link>
+            <Link aria-label="Github account" href={'https://github.com/timbosTours'} target="_blank"><AiOutlineGithub className='fill-amber-100 dark:fill-columbiaBlue-700 mx-2 h-6 w-6 md:h-10 md:w-10'/></Link>
+            <Link aria-label="Linkedin account" href={'https://www.linkedin.com/in/timothyfawcett89/'} target="_blank"><AiFillLinkedin className='fill-amber-100 dark:fill-columbiaBlue-700 mx-2 h-6 w-6 md:h-10 md:w-10'/></Link>
+            <Link aria-label="Twitter account" href={'https://twitter.com/timbosTours'} target="_blank"><AiOutlineTwitter className='fill-amber-100 dark:fill-columbiaBlue-700 mx-2 h-6 w-6 md:h-10 md:w-10'/></Link>
             </div>
         </footer>
     </>)

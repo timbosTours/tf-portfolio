@@ -3,6 +3,9 @@ import Footer from './components/Footer'
 import Providers from './Providers'
 import './globals.css'
 import { Roboto } from 'next/font/google'
+import { Suspense } from 'react'
+import Loading from './components/Loading';
+
 
 
 
@@ -26,9 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body >
+        <Suspense fallback={<Loading/>}>
         <Providers>
         {children}
-        </Providers>
+          </Providers>
+        </Suspense>
       </body>
     </html>
   )

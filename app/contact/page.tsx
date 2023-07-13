@@ -79,7 +79,7 @@ export default function ContactForm() {
     return (
         <div className="min-h-screen bg-zinc-800 flex flex-col dark:bg-mountbattenpink-700">
             <NavBar/>
-        <div className="min-h-screen flex items-center justify-center">
+        <div tabIndex={0} aria-label="Contact form" className="min-h-screen flex items-center justify-center">
             {!isSubmitSuccessful && (
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input
@@ -104,7 +104,7 @@ export default function ContactForm() {
                 {...register("botcheck")}></input>
 
                         <div className="mb-5">
-                <label className="block text-amber-100 dark:text-zinc-800">Name</label>
+                <label tabIndex={0} className="block text-amber-100 dark:text-zinc-800">Name</label>
                 <input
                     type="text"
                     autoComplete="false"
@@ -123,7 +123,7 @@ export default function ContactForm() {
                 </div>
 
                 <div className="mb-5">
-                <label htmlFor="email_address" className="block text-amber-100 dark:text-zinc-800">
+                <label tabIndex={0} htmlFor="email_address" className="block text-amber-100 dark:text-zinc-800">
                     Email Address
                 </label>
                 <input
@@ -148,7 +148,7 @@ export default function ContactForm() {
                 </div>
 
                         <div className="mb-3">
-                <label className="block text-amber-100 dark:text-zinc-800">Message</label>
+                <label tabIndex={0} className="block text-amber-100 dark:text-zinc-800">Message</label>
                 <textarea
                     className={`${roboto.className} block text-amber-100 md:w-80 py-3 bg-zinc-800 dark:bg-mountbattenpink-700 border border-b-amber-100 border-t-zinc-800 dark:border-b-zinc-800 dark:border-t-mountbattenpink-700 dark:text-zinc-800 border-x-0 placeholder:text-amber-100 outline-none
                     `}
@@ -243,22 +243,23 @@ export default function ContactForm() {
             )}
         </div>
             <div className="flex flex-row mx-auto -mt-28 mb-12">
-                <p className="text-amber-100 md:text-xl md:pt-1 dark:text-zinc-800">Or connect with me on...</p>
+                <p tabIndex={0} className="text-amber-100 md:text-xl md:pt-1 dark:text-zinc-800">Or connect with me on...</p>
                 <span className='flex flex-row ml-4'>
-            <Link href={'https://github.com/timbosTours'} target="_blank"><AiOutlineGithub className='fill-amber-100 dark:fill-columbiaBlue-700 mx-2 h-6 w-6 md:h-10 md:w-10'/></Link>
-            <Link href={'https://www.linkedin.com/in/timothyfawcett89/'} target="_blank"><AiFillLinkedin className='fill-amber-100 dark:fill-columbiaBlue-700 mx-2 h-6 w-6 md:h-10 md:w-10'/></Link>
-            <Link href={'https://twitter.com/timbosTours'} target="_blank"><AiOutlineTwitter className='fill-amber-100 dark:fill-columbiaBlue-700 mx-2 h-6 w-6 md:h-10 md:w-10'/></Link>
+            <Link aria-label="Github account" href={'https://github.com/timbosTours'} target="_blank"><AiOutlineGithub className='fill-amber-100 dark:fill-columbiaBlue-700 mx-2 h-6 w-6 md:h-10 md:w-10'/></Link>
+            <Link aria-label="Linkedin account" href={'https://www.linkedin.com/in/timothyfawcett89/'} target="_blank"><AiFillLinkedin className='fill-amber-100 dark:fill-columbiaBlue-700 mx-2 h-6 w-6 md:h-10 md:w-10'/></Link>
+            <Link aria-label="Twitter account" href={'https://twitter.com/timbosTours'} target="_blank"><AiOutlineTwitter className='fill-amber-100 dark:fill-columbiaBlue-700 mx-2 h-6 w-6 md:h-10 md:w-10'/></Link>
             </span>
             </div>
         <p
             className="text-center text-sm
         ">
-            <a
+                <a
+            tabIndex={-1}
             href="https://web3forms.com/"
             target="_blank"
             rel="noopener"
             className="text-zinc-900 dark:text-mountbattenpink-800">
-            Forms by Web3Froms
+            Forms by Web3Forms
             </a>
             </p>
             <Footer/>

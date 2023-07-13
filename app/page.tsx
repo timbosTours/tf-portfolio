@@ -18,8 +18,6 @@ import { SiTailwindcss } from 'react-icons/si'
 import { SiCss3 } from 'react-icons/si'
 import { SiSass } from 'react-icons/si'
 import ProjectsSlider from './components/ProjectsSlider';
-import { Suspense } from 'react';
-import Loading from './components/Loading';
 import ComputerImage from './components/ComputerImage';
 
 const mainFont = Antic_Didone({
@@ -49,21 +47,21 @@ export default async function Home() {
       {/* Pro first section */}
       <section className={`${mainFont.className}  min-h-screen w-full justify-center flex dark:hidden`}>
         <div className='flex flex-col  mt-44 dark:block dark:ml-24 dark:mt-56'>
-          <h1 className={`dark:hidden text-amber-100 text-2xl xs:text-4xl mx-auto sm:text-6xl md:text-7xl xl:text-9xl border-b-2 border-b-amber-100 font-light`}>TIMOTHY FAWCETT</h1>
+          <h1 tabIndex={0} className={`dark:hidden text-amber-100 text-2xl xs:text-4xl mx-auto sm:text-6xl md:text-7xl xl:text-9xl border-b-2 border-b-amber-100 font-light`}>TIMOTHY FAWCETT</h1>
         <br />
-        <h2 className=" text-2xl md:text-5xl xl:text-7xl text-amber-100 mx-auto mt-4 dark:hidden"> Web Developer</h2>
-        <p className={`${roboto.className} text-xs md:text-base font-light text-amber-100 mx-auto mt-4 `}>Building where the possibilities are infinite.</p>
+        <h2 tabIndex={0} className=" text-2xl md:text-5xl xl:text-7xl text-amber-100 mx-auto mt-4 dark:hidden"> Web Developer</h2>
+        <p tabIndex={0} className={`${roboto.className} text-xs md:text-base font-light text-amber-100 mx-auto mt-4 `}>Building where the possibilities are infinite.</p>
         <span className='mx-auto mt-4 scale-75 dark:hidden'>
           <InfiniteCode />
         </span>
         <Link href={'/contact'} className={`${roboto.className} mx-auto mt-28 text-amber-100 border-2 border-amber-100 py-2 px-4 text-2xl rounded-sm hover:animate-bounce`}>Lets Talk!</Link>
         <span className='flex justify-center mt-16'>
           
-          <p className={`${roboto.className} text-amber-100 font-light`}>Tasmania, Australia</p>
+          <p tabIndex={0} aria-label='Location Tasmania, Australia' className={`${roboto.className} text-amber-100 font-light`}>Tasmania, Australia</p>
           <span className='flex flex-row ml-4'>
-            <Link href={'https://github.com/timbosTours'} target="_blank"><AiOutlineGithub className='fill-amber-100 mx-2 h-6 w-6'/></Link>
-            <Link href={'https://www.linkedin.com/in/timothyfawcett89/'} target="_blank"><AiFillLinkedin className='fill-amber-100 mx-2 h-6 w-6'/></Link>
-            <Link href={'https://twitter.com/timbosTours'} target="_blank"><AiOutlineTwitter className='fill-amber-100 mx-2 h-6 w-6'/></Link>
+            <Link aria-label='github account' href={'https://github.com/timbosTours'} target="_blank"><AiOutlineGithub className='fill-amber-100 mx-2 h-6 w-6'/></Link>
+            <Link aria-label='linkedin account' href={'https://www.linkedin.com/in/timothyfawcett89/'} target="_blank"><AiFillLinkedin className='fill-amber-100 mx-2 h-6 w-6'/></Link>
+            <Link aria-label='twitter account' href={'https://twitter.com/timbosTours'} target="_blank"><AiOutlineTwitter className='fill-amber-100 mx-2 h-6 w-6'/></Link>
           </span>
         </span>
       </div>
@@ -75,9 +73,9 @@ export default async function Home() {
   <div className='flex flex-row justify-between min-h-screen pt-44 pl-10 sm:pl-28 overflow-hidden'>
           <div className='flex flex-col sm:flex-row justify-between'>
             <div>
-      <h2 tabIndex={-1} className={`${roboto.className} hidden dark:block mx-auto text-zinc-800 font-normal lg:text-lg`}>Hello friends, I'm Tim</h2>
-              <h2 className={`${roboto.className}  hidden dark:block text-2xl xs:text-3xl lg:text5xl xl:text-7xl text-zinc-800 mx-auto mt-4`}>A Web <span className={`${carter.className} bg-gradient-to-t from-white via-columbiaBlue-500 to-columbiaBlue-700 bg-clip-text text-transparent text-3xl xs:text-4xl lg:text6xl xl:text-8xl`}>Developer</span></h2>
-      <p className={`${roboto.className} lg:text-lg text-zinc-800 mx-auto mt-4 `}>Building where the possibilities are infinite.</p>
+      <h1 tabIndex={0} className={`${roboto.className} hidden dark:block mx-auto text-zinc-800 font-medium lg:text-lg`}>Hello friends, I'm Tim</h1>
+              <h2 tabIndex={0} className={`${roboto.className}  hidden dark:block text-2xl xs:text-3xl lg:text5xl xl:text-7xl text-zinc-800 mx-auto mt-4`}>A Web <span tabIndex={0} className={`${carter.className} bg-gradient-to-t from-white via-columbiaBlue-500 to-columbiaBlue-700 bg-clip-text text-transparent text-3xl xs:text-4xl lg:text6xl xl:text-8xl`}>Developer</span></h2>
+      <p tabIndex={0} className={`${roboto.className} font-medium lg:text-lg text-zinc-800 mx-auto mt-4 `}>Building where the possibilities are infinite.</p>
       <br className='xs:mb-8 sm:mb-44'/>
             <Link href={'/contact'} className={`${carter.className} bg-gradient-to-t from-white  via-columbiaBlue-500 to-columbiaBlue-700 bg-clip-text text-transparent py-2 px-4 mt-auto xl:mt-40 text-2xl lg:text-5xl rounded-lg hover:animate-pulse border-2 border-zinc-800`}>Reach Out!</Link>
             </div>
@@ -88,35 +86,35 @@ export default async function Home() {
     </div>
   </div>
     <span className='flex justify-center mb-10 '>
-      <p className={`${roboto.className} text-zinc-800`}>Tasmania, Australia</p>
+      <p tabIndex={0} aria-label='location, Tasmania, Australia' className={`${roboto.className} text-zinc-800`}>Tasmania, Australia</p>
       <span className='flex flex-row sm:ml-4'>
-        <Link href={'https://github.com/timbosTours'} target="_blank"><AiOutlineGithub className='fill-zinc-800 mx-2 h-6 w-6'/></Link>
-        <Link href={'https://www.linkedin.com/in/timothyfawcett89/'} target="_blank"><AiFillLinkedin className='fill-zinc-800 mx-2 h-6 w-6'/></Link>
-        <Link href={'https://twitter.com/timbosTours'} target="_blank"><AiOutlineTwitter className='fill-zinc-800 mx-2 h-6 w-6'/></Link>
+        <Link aria-label='github account' href={'https://github.com/timbosTours'} target="_blank"><AiOutlineGithub className='fill-zinc-800 mx-2 h-6 w-6'/></Link>
+        <Link aria-label='linkedin account' href={'https://www.linkedin.com/in/timothyfawcett89/'} target="_blank"><AiFillLinkedin className='fill-zinc-800 mx-2 h-6 w-6'/></Link>
+        <Link aria-label='twitter account' href={'https://twitter.com/timbosTours'} target="_blank"><AiOutlineTwitter className='fill-zinc-800 mx-2 h-6 w-6'/></Link>
       </span>
     </span>
       </section>
       
       {/* Project section */}
 
-      <section id='projects-section' className="min-h-screen w-full bg-amber-100 overflow-hidden dark:bg-columbiaBlue-700">
-      <h2 className={`${mainFont.className} dark:hidden flex justify-center text-4xl md:text-6xl mt-14 mb-40 md:mb-30 lg:mb-20 text-zinc-800`}>
+      <section tabIndex={0} aria-label='projects section' id='projects-section' className="min-h-screen w-full bg-amber-100 overflow-hidden dark:bg-columbiaBlue-700">
+      <h2 tabIndex={0} className={`${mainFont.className} dark:hidden flex justify-center text-4xl md:text-6xl mt-14 mb-40 md:mb-30 lg:mb-20 text-zinc-800`}>
         Projects
         </h2>
-      <h2 className={`${carter.className} hidden dark:flex justify-center text-4xl md:text-6xl mt-14 mb-40 md:mb-30 lg:mb-20 text-zinc-800`}>
+      <h2 tabIndex={0} className={`${carter.className} hidden dark:flex justify-center text-4xl md:text-6xl mt-14 mb-40 md:mb-30 lg:mb-20 text-zinc-800`}>
         Projects
         </h2>
-        <Suspense fallback={<Loading/>}>
+
           <ProjectsSlider />
-        </Suspense>
+
     </section>
 
       {/* Pro About Section */}
 
-      <section id='about-section' className='h-screen w-full bg-zinc-800 flex dark:hidden flex-col flex-grow justify-center md:flex-row md:justify-between overflow-hidden dark:bg-mountbattenpink-700'>
+      <section tabIndex={0} aria-label='about section' id='about-section' className='h-screen w-full bg-zinc-800 flex dark:hidden flex-col flex-grow justify-center md:flex-row md:justify-between overflow-hidden dark:bg-mountbattenpink-700'>
         <div className='m-4 md:ml-20 mx-auto md:w-2/5 mt-10 md:mt-40 h-1/2 md:h-full'>
           <Image src={'/webDevDisplay1.jpeg'} alt={'Timothy Fawcett'} height={200} width={200} className='mx-auto lg:ml-16 rounded-full scale-50 md:scale-100 filter sepia contrast-75 brightness-90 md:mb-10'></Image>
-          <p className={`${mainFont.className} text-amber-100 mx-6 text-xs xs:text-sm md:text-md xl:text-xl text-center md:text-left`}>G'day, I'm Tim! A self-taught developer working remotely from beautiful Northern Tasmania. Before discovering my love for web development, I spent most of my life traveling and working in a wide variety of industries and jobs, primarily in marine tourism, hospitality, and wine, with plenty of hard yakka to get by along the way. I am currently diving deep into design and SEO and am always open to learning new tech! <br /> <br /> I am currently building with...</p>
+          <p tabIndex={0} className={`${mainFont.className} text-amber-100 mx-6 text-xs xs:text-sm md:text-md xl:text-xl text-center md:text-left`}>G'day, I'm Tim! A self-taught developer working remotely from beautiful Northern Tasmania. Before discovering my love for web development, I spent most of my life traveling and working in a wide variety of industries and jobs, primarily in marine tourism, hospitality, and wine, with plenty of hard yakka to get by along the way. I am currently diving deep into design and SEO and am always open to learning new tech! <br /> <br/> I am currently building with...</p>
         </div>
         <div className="relative h-2/5 sm:h-2/3 w-2/3 rounded-full my-auto scale-50 sm:scale-75 lg:scale-100 mx-auto">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-100 via-zinc-800 to-zinc-800 blur-3xl rounded-full">
@@ -139,14 +137,14 @@ export default async function Home() {
 
       {/* About Section Chill */}
 
-      <section id='about-section' className='hidden min-h-screen w-full dark:flex  flex-col justify-center xl:flex-row md:justify-between overflow-hidden dark:bg-mountbattenpink-700'>
+      <section tabIndex={0} aria-label='about section' id='about-section' className='hidden min-h-screen w-full dark:flex  flex-col justify-center xl:flex-row md:justify-between overflow-hidden dark:bg-mountbattenpink-700'>
         <div className='mx-auto lg:mt-24'>
                 <div className="mx-auto xs:mt-10 mb-10 relative w-48 h-48 rounded-full overflow-hidden">
-        <Image src="/webDevDisplay2.jpeg" alt="Timothy Fawcett" height={200} width={200} className="absolute w-full h-full object-cover "/>
+        <Image src="/webDevDisplay2.png" alt="Timothy Fawcett" height={200} width={200} className="absolute w-full h-full object-cover "/>
         <div className="absolute w-full h-full bg-columbiaBlue-900 opacity-50"></div>
           </div>
           
-          <p className={`${roboto.className} text-zinc-800 max-w-xl mx-12 pb-4 text-xs xs:text-sm md:text-lg text-center xl:text-left`}>G'day, I'm Tim! A self-taught developer working remotely from beautiful Northern Tasmania. Before discovering my love for web development, I spent most of my life traveling and working in a wide variety of industries and jobs, primarily in marine tourism, hospitality, and wine, with plenty of hard yakka to get by along the way. I am currently diving deep into design and SEO and am always open to learning new tech! <br /> <br /> I am currently building with...</p>
+          <p tabIndex={0} className={`${roboto.className} text-zinc-800 max-w-xl mx-12 pb-4 text-xs xs:text-sm md:text-lg text-center xl:text-left`}>G'day, I'm Tim! A self-taught developer working remotely from beautiful Northern Tasmania. Before discovering my love for web development, I spent most of my life traveling and working in a wide variety of industries and jobs, primarily in marine tourism, hospitality, and wine, with plenty of hard yakka to get by along the way. I am currently diving deep into design and SEO and am always open to learning new tech! <br /> <br /> I am currently building with...</p>
         </div>
           <div className="flex flex-row my-40 md:my-auto mx-auto">
             <SiNextdotjs className='h-8 w-8 lg:h-16 sm:w-16 mx-2 fill-columbiaBlue-700 animate-bounce-delay-1'/>
@@ -154,9 +152,9 @@ export default async function Home() {
             <SiTypescript className='h-8 w-8 lg:h-16 sm:w-16 mx-2 fill-columbiaBlue-700 animate-bounce-delay-3'/>
             <SiJavascript className='h-8 w-8 lg:h-16 sm:w-16 mx-2 fill-columbiaBlue-700 animate-bounce-delay-4'/>
             <SiHtml5 className='h-8 w-8 lg:h-16 sm:w-16 mx-2 fill-columbiaBlue-700 animate-bounce-delay-5'/>
-            <SiTailwindcss className='h-8 w-8 lg:h-16 sm:w-16 mx-2 fill-columbiaBlue-700 animate-bounce-delay-6'/>
+            <SiTailwindcss  className='h-8 w-8 lg:h-16 sm:w-16 mx-2 fill-columbiaBlue-700 animate-bounce-delay-6'/>
             <SiCss3 className='h-8 w-8 lg:h-16 sm:w-16 mx-2 fill-columbiaBlue-700 animate-bounce-delay-7'/>
-            <SiSass className='h-8 w-8 lg:h-16 sm:w-16 mx-2 fill-columbiaBlue-700 animate-bounce-delay-8'/>
+            <SiSass tabIndex={0} className='h-8 w-8 lg:h-16 sm:w-16 mx-2 fill-columbiaBlue-700 animate-bounce-delay-8'/>
           </div>
 
 
