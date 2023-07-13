@@ -17,7 +17,7 @@ type Project = {
     };
 
 const carousel: KeenSliderPlugin = (slider) => {
-    const z = 525;
+    const z = 520;
     function rotate() {
         // Check if slider.track.details is not null before using it
         if (slider.track && slider.track.details) {
@@ -65,8 +65,8 @@ export default function ProjectsSlider() {
     }, []);
 
     return (
-        <div key={projects.length} className="wrapper">
-            <div className="scene ">
+        <div key={projects.length} className="wrapper ">
+            <div className="scene">
                 <div className="carousel keen-slider " ref={sliderRef}>
                     {projects.map((project) => (
                         <div key={project._id} className="carousel__cell ">

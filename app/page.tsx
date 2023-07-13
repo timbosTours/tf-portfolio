@@ -50,16 +50,14 @@ export default async function Home() {
       <section className={`${mainFont.className}  min-h-screen w-full justify-center flex dark:hidden`}>
         <div className='flex flex-col  mt-44 dark:block dark:ml-24 dark:mt-56'>
           <h1 className={`dark:hidden text-amber-100 text-2xl xs:text-4xl mx-auto sm:text-6xl md:text-7xl xl:text-9xl border-b-2 border-b-amber-100 font-light`}>TIMOTHY FAWCETT</h1>
-        <h2 tabIndex={-1} className={`${roboto.className} hidden dark:block text-2xl mx-auto `}>G'day, I'm Tim</h2>
         <br />
         <h2 className=" text-2xl md:text-5xl xl:text-7xl text-amber-100 mx-auto mt-4 dark:hidden"> Web Developer</h2>
-        <h2 className={`${carter.className} hidden dark:block text-2xl md:text-5xl xl:text-7xl text-columbiaBlue-700 mx-auto mt-4`}>A Web <span className='bg-gradient-to-t from-white via-columbiaBlue-500 to-columbiaBlue-700 bg-clip-text text-transparent'>Developer</span></h2>
         <p className={`${roboto.className} text-xs md:text-base font-light text-amber-100 mx-auto mt-4 `}>Building where the possibilities are infinite.</p>
         <span className='mx-auto mt-4 scale-75 dark:hidden'>
           <InfiniteCode />
         </span>
         <Link href={'/contact'} className={`${roboto.className} mx-auto mt-28 text-amber-100 border-2 border-amber-100 py-2 px-4 text-2xl rounded-sm hover:animate-bounce`}>Lets Talk!</Link>
-        <span className='flex justify-center mt-24 '>
+        <span className='flex justify-center mt-16'>
           
           <p className={`${roboto.className} text-amber-100 font-light`}>Tasmania, Australia</p>
           <span className='flex flex-row ml-4'>
@@ -77,13 +75,13 @@ export default async function Home() {
   <div className='flex flex-row justify-between min-h-screen pt-44 pl-10 sm:pl-28 overflow-hidden'>
           <div className='flex flex-col sm:flex-row justify-between'>
             <div>
-      <h2 tabIndex={-1} className={`${roboto.className} hidden dark:block mx-auto text-zinc-800 font-normal`}>Hello friends, I'm Tim</h2>
-      <h2 className={`${carter.className}  hidden dark:block text-3xl xs:text-4xl lg:text6xl xl:text-7xl text-zinc-800 mx-auto mt-4`}>A Web <span className='bg-gradient-to-t from-white via-columbiaBlue-500 to-columbiaBlue-700 bg-clip-text text-transparent'>Developer</span></h2>
-      <p className={`${roboto.className} text-xs md:text-base text-zinc-800 mx-auto mt-4 `}>Building where the possibilities are infinite.</p>
-      <br className='xs:mb-2 sm:mb-10'/>
-            <Link href={'/contact'} className={`${carter.className} bg-gradient-to-t from-white  via-columbiaBlue-500 to-columbiaBlue-700 bg-clip-text text-transparent py-2 px-4 mt-auto text-2xl lg:text-5xl rounded-lg hover:animate-pulse border-2`}>Reach Out!</Link>
+      <h2 tabIndex={-1} className={`${roboto.className} hidden dark:block mx-auto text-zinc-800 font-normal lg:text-lg`}>Hello friends, I'm Tim</h2>
+              <h2 className={`${roboto.className}  hidden dark:block text-2xl xs:text-3xl lg:text5xl xl:text-7xl text-zinc-800 mx-auto mt-4`}>A Web <span className={`${carter.className} bg-gradient-to-t from-white via-columbiaBlue-500 to-columbiaBlue-700 bg-clip-text text-transparent text-3xl xs:text-4xl lg:text6xl xl:text-8xl`}>Developer</span></h2>
+      <p className={`${roboto.className} lg:text-lg text-zinc-800 mx-auto mt-4 `}>Building where the possibilities are infinite.</p>
+      <br className='xs:mb-8 sm:mb-44'/>
+            <Link href={'/contact'} className={`${carter.className} bg-gradient-to-t from-white  via-columbiaBlue-500 to-columbiaBlue-700 bg-clip-text text-transparent py-2 px-4 mt-auto xl:mt-40 text-2xl lg:text-5xl rounded-lg hover:animate-pulse border-2 border-zinc-800`}>Reach Out!</Link>
             </div>
-            <div className='pr-8 -ml-24 xs:m-4 sm:-ml-16 sm:mt-24 md:ml-20 lg:ml-40 xl: scale-75 md:scale-100 lg:scale-125 xl:scale-150 overflow-hidden' >
+            <div className='max-w-2xl pr-8 -ml-24 xs:m-4 sm:-ml-16 sm:mt-24 md:ml-20 lg:ml-40 xl:absolute xl:right-24 scale-75 md:scale-100 lg:scale-125 xl:scale-150 overflow-hidden' >
               
               <ComputerImage />
             </div>
@@ -97,10 +95,15 @@ export default async function Home() {
         <Link href={'https://twitter.com/timbosTours'} target="_blank"><AiOutlineTwitter className='fill-zinc-800 mx-2 h-6 w-6'/></Link>
       </span>
     </span>
-</section>
+      </section>
+      
+      {/* Project section */}
 
       <section id='projects-section' className="min-h-screen w-full bg-amber-100 overflow-hidden dark:bg-columbiaBlue-700">
-      <h2 className={`${roboto.className} flex justify-center text-4xl md:text-6xl mt-14 mb-40 md:mb-30 lg:mb-20 underline text-zinc-800`}>
+      <h2 className={`${mainFont.className} dark:hidden flex justify-center text-4xl md:text-6xl mt-14 mb-40 md:mb-30 lg:mb-20 text-zinc-800`}>
+        Projects
+        </h2>
+      <h2 className={`${carter.className} hidden dark:flex justify-center text-4xl md:text-6xl mt-14 mb-40 md:mb-30 lg:mb-20 text-zinc-800`}>
         Projects
         </h2>
         <Suspense fallback={<Loading/>}>
@@ -136,14 +139,14 @@ export default async function Home() {
 
       {/* About Section Chill */}
 
-      <section id='about-section' className='hidden h-screen w-full dark:flex  flex-col justify-center xl:flex-row md:justify-between overflow-hidden dark:bg-mountbattenpink-700'>
+      <section id='about-section' className='hidden min-h-screen w-full dark:flex  flex-col justify-center xl:flex-row md:justify-between overflow-hidden dark:bg-mountbattenpink-700'>
         <div className='mx-auto lg:mt-24'>
                 <div className="mx-auto xs:mt-10 mb-10 relative w-48 h-48 rounded-full overflow-hidden">
-        <Image src="/webDevDisplay2.jpeg" alt="Timothy Fawcett" height={200} width={200} className="absolute w-full h-full object-cover"/>
+        <Image src="/webDevDisplay2.jpeg" alt="Timothy Fawcett" height={200} width={200} className="absolute w-full h-full object-cover "/>
         <div className="absolute w-full h-full bg-columbiaBlue-900 opacity-50"></div>
           </div>
           
-          <p className={`${roboto.className} text-zinc-800 max-w-xl mx-12 text-xs xs:text-sm md:text-lg text-center xl:text-left`}>G'day, I'm Tim! A self-taught developer working remotely from beautiful Northern Tasmania. Before discovering my love for web development, I spent most of my life traveling and working in a wide variety of industries and jobs, primarily in marine tourism, hospitality, and wine, with plenty of hard yakka to get by along the way. I am currently diving deep into design and SEO and am always open to learning new tech! <br /> <br /> I am currently building with...</p>
+          <p className={`${roboto.className} text-zinc-800 max-w-xl mx-12 pb-4 text-xs xs:text-sm md:text-lg text-center xl:text-left`}>G'day, I'm Tim! A self-taught developer working remotely from beautiful Northern Tasmania. Before discovering my love for web development, I spent most of my life traveling and working in a wide variety of industries and jobs, primarily in marine tourism, hospitality, and wine, with plenty of hard yakka to get by along the way. I am currently diving deep into design and SEO and am always open to learning new tech! <br /> <br /> I am currently building with...</p>
         </div>
           <div className="flex flex-row my-40 md:my-auto mx-auto">
             <SiNextdotjs className='h-8 w-8 lg:h-16 sm:w-16 mx-2 fill-columbiaBlue-700 animate-bounce-delay-1'/>
