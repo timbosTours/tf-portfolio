@@ -3,19 +3,19 @@
 import TfLogoChill from "./TfLogoChill";
 import TfLogoPro from "./TfLogoPro";
 import Link from "next/link";
-import { ThemeSwitcher } from './ThemeSwitcher'
+import { ThemeSwitcher } from "./ThemeSwitcher";
 import { Carter_One, Roboto } from "next/font/google";
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { useState } from "react";
 import DropMenu from "./DropMenu";
 
 const roboto = Roboto({
-  weight: ['400'],
-  subsets: ['latin']
+    weight: ['400'],
+    subsets: ['latin']
 })
 const carter = Carter_One({
-  weight: ['400'],
-  subsets: ['latin']
+    weight: ['400'],
+    subsets: ['latin']
 })
 
 export default function NavBar() {
@@ -36,26 +36,58 @@ export default function NavBar() {
                 <TfLogoChill />
                 </div>
                 <div className="hidden sm:flex mr-6">
+
+                {/* Pro theme navigation */}
+
                 <nav className={`${roboto.className} mt-4 flex dark:hidden`}>
-                    <Link href={'/'} className="mx-4">Home</Link>
-                    <Link href="/#projects-section" className="mx-4">Projects</Link>
-                    <Link href="/#about-section" className="mx-4">About</Link>
-                    <Link href={'/contact'} className="ml-4">Contact</Link>
+                        <Link
+                            href={'/'}
+                            className="mx-4">Home
+                        </Link>
+                        <Link
+                            href="/#projects-section"
+                            className="mx-4">Projects
+                        </Link>
+                        <Link
+                            href="/#about-section"
+                            className="mx-4">About
+                        </Link>
+                        <Link
+                            href={'/contact'}
+                            className="ml-4">Contact
+                        </Link>
                     <span className="mx-4">
                     <ThemeSwitcher />
                     </span>
                 </nav>
+
+                {/* Chill theme navigation */}
+
                 <nav className={`${carter.className} mt-4 hidden dark:flex`}>
-                    <Link href={'/'} className="mx-4">Home</Link>
-                    <Link href="/#projects-section" className="mx-4">Projects</Link>
-                    <Link href="/#about-section" className="mx-4">About</Link>
-                    <Link href={'/contact'} className="ml-4">Contact</Link>
+                        <Link
+                            href={'/'}
+                            className="mx-4">Home
+                        </Link>
+                        <Link
+                            href="/#projects-section"
+                            className="mx-4">Projects
+                        </Link>
+                        <Link
+                            href="/#about-section"
+                            className="mx-4">About
+                        </Link>
+                        <Link
+                            href={'/contact'}
+                            className="ml-4">Contact
+                        </Link>
                     <span className="mx-4">
                     <ThemeSwitcher />
                     </span>
                 </nav>
                 </div>
-                <button onClick={handleClick} className="mr-6 mb-2 sm:hidden">
+                <button
+                    onClick={handleClick}
+                    className="mr-6 mb-2 sm:hidden">
                 <GiHamburgerMenu className="w-6 h-6" />
                 </button>
                 {isDropOpen && <DropMenu />}
@@ -64,14 +96,3 @@ export default function NavBar() {
 
     )
 }
-
-{/* <div className="w-screen m-2 flex justify-between px-4 absolute dark:hidden">
-    <div>
-        <TfLogo />
-    </div>
-    <nav>
-        <Link href={'/'}>About</Link>
-        <Link href={'/'}>Contact</Link>
-    </nav>
-    <ThemeSwitcher/>
-    </div> */}

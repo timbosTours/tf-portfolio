@@ -5,6 +5,7 @@ import "../globals.css";
 import { useKeenSlider, KeenSliderPlugin } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { getProjects } from "@/sanity/sanity-utils";
+import Image from "next/image";
 
 
 // Define a type for your project data
@@ -71,7 +72,7 @@ export default function ProjectsSlider() {
                     {projects.map((project) => (
                         <div key={project._id} className="carousel__cell ">
                         <a href={`projects/${project.slug}`}>
-                            <img className="rounded-3xl" src={project.image} alt={project.name} width="500" height="200" />
+                            <Image className="rounded-3xl" src={project.image} alt={project.name} width="500" height="200" />
                             </a>
                         </div>
                     ))}

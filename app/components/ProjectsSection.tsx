@@ -17,13 +17,17 @@ export default function ProjectsSection() {
         <>
             {/* Pro Heading */}
 
-            <h2 tabIndex={0} className={`${mainFont.className} dark:hidden flex justify-center text-4xl md:text-6xl mt-14 mb-40 md:mb-30 lg:mb-20 text-zinc-800`}>
+            <h2
+                tabIndex={0}
+                className={`${mainFont.className} dark:hidden flex justify-center text-4xl md:text-6xl mt-14 mb-40 md:mb-30 lg:mb-20 text-zinc-800`}>
                 Projects
                 </h2>
             
-                {/* Chill Heading */}
+            {/* Chill Heading */}
                 
-            <h2 tabIndex={0} className={`${carter.className} hidden dark:flex justify-center text-4xl md:text-6xl mt-14 mb-40 md:mb-30 lg:mb-20 text-zinc-800`}>
+            <h2
+                tabIndex={0}
+                className={`${carter.className} hidden dark:flex justify-center text-4xl md:text-6xl mt-14 mb-40 md:mb-30 lg:mb-20 text-zinc-800`}>
                 Projects
             </h2>
 

@@ -1,5 +1,3 @@
-import NavBar from './components/NavBar'
-import Footer from './components/Footer'
 import Providers from './Providers'
 import './globals.css'
 import { Roboto } from 'next/font/google'
@@ -29,11 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body >
+      <Providers>
         <Suspense fallback={<Loading/>}>
-        <Providers>
         {children}
-          </Providers>
         </Suspense>
+          </Providers>
       </body>
     </html>
   )
