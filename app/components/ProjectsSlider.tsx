@@ -14,10 +14,11 @@ type Project = {
     image: string;
     name: string;
     slug: string
-    };
+};
+    
 
 const carousel: KeenSliderPlugin = (slider) => {
-    const z = 520;
+    const z = window.innerWidth * 1.1;
     function rotate() {
         // Check if slider.track.details is not null before using it
         if (slider.track && slider.track.details) {
@@ -38,7 +39,6 @@ const carousel: KeenSliderPlugin = (slider) => {
     slider.on("detailsChanged", rotate);
 };
 
-const animation = { duration: 9000, easing: (t: number) => t }
 
 
 export default function ProjectsSlider() {

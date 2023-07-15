@@ -19,6 +19,9 @@ import { SiCss3 } from 'react-icons/si'
 import { SiSass } from 'react-icons/si'
 import ProjectsSlider from './components/ProjectsSlider';
 import ComputerImage from './components/ComputerImage';
+import ProHeroSection from './components/ProHeroSection';
+import ChillHeroSection from './components/ChillHeroSection';
+import ProjectsSection from './components/ProjectsSection';
 
 const mainFont = Antic_Didone({
     weight: ['400'],
@@ -44,70 +47,25 @@ export default async function Home() {
       <NavBar />
       
       
-      {/* Pro first section */}
+      {/* Pro Hero section */}
       <section className={`${mainFont.className}  min-h-screen w-full justify-center flex dark:hidden`}>
-        <div className='flex flex-col  mt-44 dark:block dark:ml-24 dark:mt-56'>
-          <h1 tabIndex={0} className={`dark:hidden text-amber-100 text-2xl xs:text-4xl mx-auto sm:text-6xl md:text-7xl xl:text-9xl border-b-2 border-b-amber-100 font-light`}>TIMOTHY FAWCETT</h1>
-        <br />
-        <h2 tabIndex={0} className=" text-2xl md:text-5xl xl:text-7xl text-amber-100 mx-auto mt-4 dark:hidden"> Web Developer</h2>
-        <p tabIndex={0} className={`${roboto.className} text-xs md:text-base font-light text-amber-100 mx-auto mt-4 `}>Building where the possibilities are infinite.</p>
-        <span className='mx-auto mt-4 scale-75 dark:hidden'>
-          <InfiniteCode />
-        </span>
-        <Link href={'/contact'} className={`${roboto.className} mx-auto mt-28 text-amber-100 border-2 border-amber-100 py-2 px-4 text-2xl rounded-sm hover:animate-bounce`}>Lets Talk!</Link>
-        <span className='flex justify-center mt-16'>
-          
-          <p tabIndex={0} aria-label='Location Tasmania, Australia' className={`${roboto.className} text-amber-100 font-light`}>Tasmania, Australia</p>
-          <span className='flex flex-row ml-4'>
-            <Link aria-label='github account' href={'https://github.com/timbosTours'} target="_blank"><AiOutlineGithub className='fill-amber-100 mx-2 h-6 w-6'/></Link>
-            <Link aria-label='linkedin account' href={'https://www.linkedin.com/in/timothyfawcett89/'} target="_blank"><AiFillLinkedin className='fill-amber-100 mx-2 h-6 w-6'/></Link>
-            <Link aria-label='twitter account' href={'https://twitter.com/timbosTours'} target="_blank"><AiOutlineTwitter className='fill-amber-100 mx-2 h-6 w-6'/></Link>
-          </span>
-        </span>
-      </div>
+        <ProHeroSection/>
       </section>
 
 
-      {/* Chill First Section */}
-<section className={`${mainFont.className} hidden dark:block min-h-screen w-full justify-center`}>
-  <div className='flex flex-row justify-between min-h-screen pt-44 pl-10 sm:pl-28 overflow-hidden'>
-          <div className='flex flex-col sm:flex-row justify-between'>
-            <div>
-      <h1 tabIndex={0} className={`${roboto.className} hidden dark:block mx-auto text-zinc-800 font-medium lg:text-lg`}>Hello friends, I'm Tim</h1>
-              <h2 tabIndex={0} className={`${roboto.className}  hidden dark:block text-2xl xs:text-3xl lg:text5xl xl:text-7xl text-zinc-800 mx-auto mt-4`}>A Web <span tabIndex={0} className={`${carter.className} bg-gradient-to-t from-white via-columbiaBlue-500 to-columbiaBlue-700 bg-clip-text text-transparent text-3xl xs:text-4xl lg:text6xl xl:text-8xl`}>Developer</span></h2>
-      <p tabIndex={0} className={`${roboto.className} font-medium lg:text-lg text-zinc-800 mx-auto mt-4 `}>Building where the possibilities are infinite.</p>
-      <br className='xs:mb-8 sm:mb-44'/>
-            <Link href={'/contact'} className={`${carter.className} bg-gradient-to-t from-white  via-columbiaBlue-500 to-columbiaBlue-700 bg-clip-text text-transparent py-2 px-4 mt-auto xl:mt-40 text-2xl lg:text-5xl rounded-lg hover:animate-pulse border-2 border-zinc-800`}>Reach Out!</Link>
-            </div>
-            <div className='max-w-2xl pr-8 -ml-24 xs:m-4 sm:-ml-16 sm:mt-24 md:ml-20 lg:ml-40 xl:absolute xl:right-24 scale-75 md:scale-100 lg:scale-125 xl:scale-150 overflow-hidden' >
-              
-              <ComputerImage />
-            </div>
-    </div>
-  </div>
-    <span className='flex justify-center mb-10 '>
-      <p tabIndex={0} aria-label='location, Tasmania, Australia' className={`${roboto.className} text-zinc-800`}>Tasmania, Australia</p>
-      <span className='flex flex-row sm:ml-4'>
-        <Link aria-label='github account' href={'https://github.com/timbosTours'} target="_blank"><AiOutlineGithub className='fill-zinc-800 mx-2 h-6 w-6'/></Link>
-        <Link aria-label='linkedin account' href={'https://www.linkedin.com/in/timothyfawcett89/'} target="_blank"><AiFillLinkedin className='fill-zinc-800 mx-2 h-6 w-6'/></Link>
-        <Link aria-label='twitter account' href={'https://twitter.com/timbosTours'} target="_blank"><AiOutlineTwitter className='fill-zinc-800 mx-2 h-6 w-6'/></Link>
-      </span>
-    </span>
+      {/* Chill Hero Section */}
+      <section className={`${mainFont.className} hidden dark:block min-h-screen w-full justify-center`}>
+      <ChillHeroSection/>
       </section>
+
       
       {/* Project section */}
 
-      <section tabIndex={0} aria-label='projects section' id='projects-section' className="min-h-screen w-full bg-amber-100 overflow-hidden dark:bg-columbiaBlue-700">
-      <h2 tabIndex={0} className={`${mainFont.className} dark:hidden flex justify-center text-4xl md:text-6xl mt-14 mb-40 md:mb-30 lg:mb-20 text-zinc-800`}>
-        Projects
-        </h2>
-      <h2 tabIndex={0} className={`${carter.className} hidden dark:flex justify-center text-4xl md:text-6xl mt-14 mb-40 md:mb-30 lg:mb-20 text-zinc-800`}>
-        Projects
-        </h2>
+      <section tabIndex={0} aria-label='projects section' id='projects-section' className=" min-h-screen w-full bg-amber-100 overflow-hidden dark:bg-columbiaBlue-700">
+      
+      <ProjectsSection/>
 
-          <ProjectsSlider />
-
-    </section>
+      </section>
 
       {/* Pro About Section */}
 
@@ -140,8 +98,8 @@ export default async function Home() {
       <section tabIndex={0} aria-label='about section' id='about-section' className='hidden min-h-screen w-full dark:flex  flex-col justify-center xl:flex-row md:justify-between overflow-hidden dark:bg-mountbattenpink-700'>
         <div className='mx-auto lg:mt-24'>
                 <div className="mx-auto xs:mt-10 mb-10 relative w-48 h-48 rounded-full overflow-hidden">
-        <Image src="/webDevDisplay2.png" alt="Timothy Fawcett" height={200} width={200} className="absolute w-full h-full object-cover "/>
-        <div className="absolute w-full h-full bg-columbiaBlue-900 opacity-50"></div>
+        <Image src="/webDevImageBlueBG.png" alt="Timothy Fawcett" height={200} width={200} className="absolute w-full h-full object-cover "/>
+        <div className="absolute w-full h-full bg-columbiaBlue-900 opacity-20"></div>
           </div>
           
           <p tabIndex={0} className={`${roboto.className} text-zinc-800 max-w-xl mx-12 pb-4 text-xs xs:text-sm md:text-lg text-center xl:text-left`}>G'day, I'm Tim! A self-taught developer working remotely from beautiful Northern Tasmania. Before discovering my love for web development, I spent most of my life traveling and working in a wide variety of industries and jobs, primarily in marine tourism, hospitality, and wine, with plenty of hard yakka to get by along the way. I am currently diving deep into design and SEO and am always open to learning new tech! <br /> <br /> I am currently building with...</p>
