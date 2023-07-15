@@ -4,49 +4,74 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Carter_One } from 'next/font/google'
 import { Monoton } from 'next/font/google'
+import { motion } from 'framer-motion';
 
 const carter = Carter_One({
     weight: '400',
     subsets: ['latin']
 })
-const monoton = Monoton({
-    weight: '400',
-    subsets: ['latin']
-})
+
+const textTransition = { type: "spring", stiffness: 300, damping: 20, when: "beforeChildren" };
+
+const variantsOne = {
+    initial: { opacity: 1 },
+    hover: { opacity: 0 }
+};
+
+const variantsTwo = {
+    initial: { opacity: 0 },
+    hover: { opacity: 1 }
+};
+
+const textVariants = {
+    initial: { scale: 1 },
+    hover: { scale: 1.2 },
+    leave: { scale: 1 }
+};
 
 export default function TfLogo() {
-    const [hover, setHover] = useState(false);
-    
+    const [isHovered, setIsHovered] = useState(false);
+    const [isTextHovered, setTextHovered] = useState(false);
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    const transition = isAnimating 
+        ? { duration: 1, repeat: Infinity, repeatType: 'reverse' as const }
+        : { duration: 1, repeat: 0, repeatType: 'reverse' as const };
+
     return (
         <div className='m-2'>
         <Link tabIndex={-1} href={'/'} className={carter.className}>
-            <span 
-                className="relative h-12 w-12 inline-block " 
-                onMouseEnter={() => setHover(true)} 
-                onMouseLeave={() => setHover(false)}
+            <motion.span 
+                className="relative h-12 w-12 inline-block" 
+                onHoverStart={() => { setIsHovered(true); setTextHovered(true); setIsAnimating(true); }} 
+                onHoverEnd={() => { setIsHovered(false); setTextHovered(false); setIsAnimating(false); }}
+                initial='initial'
+                animate={isHovered ? 'hover' : 'initial'}
             >
-                <div 
-                    className="rounded-full absolute inset-0 border-t-2 border-b-2 transition-all duration-500 rotate-45" 
-                    style={{
-                        borderColor: '#27272a', 
-                        opacity: hover ? 0 : 1, 
-                        transition: 'opacity 1s'
-                    }}
+                <motion.div 
+                    className="rounded-full absolute inset-0 border-t-2 border-b-2 rotate-45" 
+                    style={{ borderColor: '#27272a' }}
+                    variants={variantsOne}
+                    transition={transition}
                 >
-                </div>
-                <div 
-                    className="rounded-full absolute inset-0 border-l-2 border-r-2 transition-all duration-500 rotate-45" 
-                    style={{
-                        borderColor: '#27272a', 
-                        opacity: hover ? 1 : 0, 
-                        transition: 'opacity 1s'
-                    }}
+                </motion.div>
+                <motion.div 
+                    className="rounded-full absolute inset-0 border-l-2 border-r-2 rotate-45" 
+                    style={{ borderColor: '#27272a' }}
+                    variants={variantsTwo}
+                    transition={transition}
                 >
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center text-2xl font-thin p-1 hover:animate-pulse bg-gradient-to-t from-white via-columbiaBlue-500 to-columbiaBlue-700 bg-clip-text text-transparent">
+                </motion.div>
+                <motion.div 
+                    className="absolute inset-0 flex items-center justify-center text-2xl font-thin p-1 bg-gradient-to-t from-white via-columbiaBlue-500 to-columbiaBlue-700 bg-clip-text text-transparent"
+                    variants={textVariants}
+                    initial='initial'
+                    animate={isTextHovered ? 'hover' : 'leave'}
+                    transition={textTransition}
+                >
                     TF
-                </div>
-            </span>
+                </motion.div>
+            </motion.span>
             </Link>
         </div>
     )
