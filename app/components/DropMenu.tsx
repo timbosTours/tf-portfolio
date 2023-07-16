@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from "next/link"
 import { Carter_One, Roboto } from "next/font/google"
 import { ThemeSwitcher } from "./ThemeSwitcher"
+import { motion, AnimatePresence } from 'framer-motion';
 
 const roboto = Roboto({
     weight: ['400'],
@@ -38,11 +39,21 @@ export default function DropMenu() {
         };
     }, [isOpen]);
 
-    return isOpen ? (
-        <div ref={node} className=" sm:hidden absolute h-96 w-56 xs:w-80 bg-amber-100 dark:bg-columbiaBlue-700 rounded-lg right-6 mt-14 z-20">
-            {/* Pro theme NavBar */}
+    return (
+        <AnimatePresence>
+        {isOpen ? (
+        <motion.div
+                    ref={node}
+                    initial={{ opacity: 0, y: -20 }}  
+                    animate={{ opacity: 1, y: 0 }} 
+                    exit={{ opacity: 0, y: -20 }} 
+                    transition={{ duration: 0.2, mass: 1, type: "spring"}}  
+            className=" sm:hidden absolute h-96 w-56 xs:w-80 bg-amber-100 dark:bg-columbiaBlue-700 rounded-lg right-6 mt-14 z-20">
+            {/* Pro theme dropdown navigation */}
 
-            <nav className={`${roboto.className} flex flex-col text-center text-zinc-900 m-4 dark:hidden`}>
+            <nav
+                
+                className={`${roboto.className} flex flex-col text-center text-zinc-900 m-4 dark:hidden`}>
                 <Link
                     href={'/'}
                     className="mx-4 my-5 text-xl">Home
@@ -59,7 +70,7 @@ export default function DropMenu() {
                 <ThemeSwitcher />
             </nav>
 
-            {/* Chill theme NavBar */}
+            {/* Chill theme drop down navigation */}
 
             <nav
                 className={`${carter.className} hidden dark:flex flex-col text-center text-zinc-900 m-4`}>
@@ -78,6 +89,7 @@ export default function DropMenu() {
                 </Link>
                 <ThemeSwitcher />
             </nav>
-        </div>
-    ) : null;
+        </motion.div>
+    ) : null}</AnimatePresence>);
+    
 }

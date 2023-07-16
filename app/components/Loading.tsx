@@ -22,10 +22,10 @@ export default function Loading() {
 
     const getLoadingMessage = (percent: number) => {
         if (percent < 15) return "Initializing...";
-        else if (percent < 35) return "JSX...";
-        else if (percent < 55) return "Assets...";
-        else if (percent < 75) return "Good Vibes...";
-        else if (percent < 99) return "Animations";
+        else if (percent < 35) return "Loading JSX...";
+        else if (percent < 55) return "Laoding Assets...";
+        else if (percent < 75) return "Laiding Good Vibes...";
+        else if (percent < 99) return "Loading Animations";
         else return "Almost There!";
     };
 
