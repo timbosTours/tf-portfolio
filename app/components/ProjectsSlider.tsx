@@ -46,8 +46,9 @@ const carousel: KeenSliderPlugin = (slider) => {
 export default function ProjectsSlider() {
     const [projects, setProjects] = useState<Project[]>([]);
     const { scrollYProgress } = useScroll()
-    const rotateZ = useTransform(scrollYProgress, [0.1, 0.4], [90, 0]);
-    const rotateX = useTransform(scrollYProgress, [0.1, 0.4], [90, 0]);
+    const rotateZ = useTransform(scrollYProgress, [0.1, 0.4275, 1], [90, 0, -90]);
+    const rotateX = useTransform(scrollYProgress, [0.1, 0.4275, 1], [90, 0, -90]);
+    const scale = useTransform(scrollYProgress, [0, 0.4, 1], [0, 1, 0]);
 
     const [sliderRef] = useKeenSlider<HTMLDivElement>(
         {
@@ -70,7 +71,7 @@ export default function ProjectsSlider() {
     }, []);
 
     return (
-        <motion.div style={{rotateZ, rotateX}} key={projects.length} className="wrapper ">
+        <motion.div style={{rotateZ, rotateX, scale}} key={projects.length} className="wrapper ">
             <div className="scene">
                 <div className="carousel keen-slider " ref={sliderRef}>
                     {projects.map((project) => (
