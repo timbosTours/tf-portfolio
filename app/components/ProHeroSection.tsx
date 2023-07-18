@@ -69,6 +69,7 @@ export default function ProHeroSection() {
             <Link href={'/contact'}>
             <motion.div 
                         whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}
+                        whileTap={{scale: 0.9}}
             className={`${roboto.className} text-amber-100 border-2 border-amber-100 py-2 px-4 text-2xl rounded-sm`}>
             Lets Talk!
             </motion.div>
@@ -87,12 +88,12 @@ export default function ProHeroSection() {
                 {/* Location, Tasmania Australia */}
 
                 <motion.p
-                    tabIndex={0}
-                    aria-label='Location Tasmania, Australia'
-                    className={`${roboto.className} text-amber-100 font-light`}
                     initial={{ y: 50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 2, }}
+                    tabIndex={0}
+                    aria-label='Location Tasmania, Australia'
+                    className={`${roboto.className} text-amber-100 font-light`}
                 >
                     Tasmania, Australia
                 </motion.p>
@@ -101,10 +102,10 @@ export default function ProHeroSection() {
 
 
                 <motion.span
-                    className='flex flex-row ml-4'
                     initial={{ x: -50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 2.2 }}
+                    className='flex flex-row ml-4'
                 >
 
                     {/* Github */}

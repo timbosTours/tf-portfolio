@@ -6,6 +6,7 @@ import { useKeenSlider, KeenSliderPlugin } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { getProjects } from "@/sanity/sanity-utils";
 import Image from "next/image";
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 
 // Define a type for your project data
@@ -44,6 +45,9 @@ const carousel: KeenSliderPlugin = (slider) => {
 
 export default function ProjectsSlider() {
     const [projects, setProjects] = useState<Project[]>([]);
+    const { scrollYProgress } = useScroll()
+    const rotateZ = useTransform(scrollYProgress, [0.1, 0.4], [90, 0]);
+    const rotateX = useTransform(scrollYProgress, [0.1, 0.4], [90, 0]);
 
     const [sliderRef] = useKeenSlider<HTMLDivElement>(
         {
@@ -66,7 +70,7 @@ export default function ProjectsSlider() {
     }, []);
 
     return (
-        <div key={projects.length} className="wrapper ">
+        <motion.div style={{rotateZ, rotateX}} key={projects.length} className="wrapper ">
             <div className="scene">
                 <div className="carousel keen-slider " ref={sliderRef}>
                     {projects.map((project) => (
@@ -79,6 +83,6 @@ export default function ProjectsSlider() {
                 </div>
             </div>
 
-        </div>
+        </motion.div>
     );
 }

@@ -8,6 +8,7 @@ import { Carter_One, Roboto } from "next/font/google";
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { useState } from "react";
 import DropMenu from "./DropMenu";
+import {motion} from 'framer-motion'
 
 const roboto = Roboto({
     weight: ['400'],
@@ -18,6 +19,21 @@ const carter = Carter_One({
     subsets: ['latin']
 })
 
+const variants = {
+  hover: { 
+    rotate: [0, 5, -5, 5, -5, 0], // change values for your desired wiggle
+    transition: {
+      duration: 0.5, // speed of wiggle
+    },
+  },
+  rest: { 
+    rotate: 0,
+    transition: {
+      duration: 0.5, // speed of return to original state
+    },
+  },
+};
+
 export default function NavBar() {
     const [isDropOpen, setDropOpen] = useState(false)
 
@@ -27,14 +43,23 @@ export default function NavBar() {
     }
 
     return (
-        <div className="w-full">
+        <header className="w-full">
             <div className="absolute flex mt-4 px-6 pr-0 w-screen justify-between text-amber-100 dark:text-zinc-900">
-                <div className="dark:hidden">
+                <motion.div 
+                    initial={{ y: -100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.04, type: "spring", stiffness: 400, damping: 10 }}
+                    className="dark:hidden">
                 <TfLogoPro />
-                </div>
-                <div className="hidden dark:flex">
+                </motion.div>
+                <motion.div 
+                    initial={{ y: -100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.04, type: "spring", stiffness: 400, damping: 10 }}
+                    className="hidden dark:flex">
                 <TfLogoChill />
-                </div>
+                </motion.div>
+                <div>
                 <div className="hidden sm:flex mr-6">
 
                 {/* Pro theme navigation */}
@@ -42,23 +67,56 @@ export default function NavBar() {
                 <nav className={`${roboto.className} mt-4 flex dark:hidden`}>
                         <Link
                             href={'/'}
-                            className="mx-4">Home
+                            className="mx-4">
+                                <motion.div
+                                initial={{ y: -100, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.05 }}
+                                whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}>
+                                    Home
+                                </motion.div>
                         </Link>
                         <Link
                             href="/#projects-section"
-                            className="mx-4">Projects
+                            className="mx-4">
+                                <motion.div
+                                initial={{ y: -100, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.06 }}
+                                whileHover={{ scale: 1.1,transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}>
+                                    Projects
+                                </motion.div>
                         </Link>
                         <Link
                             href="/#about-section"
-                            className="mx-4">About
+                                className="mx-4">
+                                <motion.div
+                                initial={{ y: -100, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.07 }}
+                                whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}>
+                                    About
+                                </motion.div>
                         </Link>
                         <Link
                             href={'/contact'}
-                            className="ml-4">Contact
+                            className="ml-4">
+                                <motion.div
+                                initial={{ y: -100, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.08 }}
+                                whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}>
+                                    Contact
+                                </motion.div>
                         </Link>
-                    <span className="mx-4">
+                            <motion.span
+                                initial={{ y: -100, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.09 }}
+                                whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}
+                                className="mx-4">
                     <ThemeSwitcher />
-                    </span>
+                    </motion.span>
                 </nav>
 
                 {/* Chill theme navigation */}
@@ -66,33 +124,76 @@ export default function NavBar() {
                 <nav className={`${carter.className} mt-4 hidden dark:flex`}>
                         <Link
                             href={'/'}
-                            className="mx-4">Home
+                                className="mx-4">
+                                <motion.div
+                                initial={{ y: -100, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.05 }}
+                                whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}>
+                                    Home
+                                </motion.div>
                         </Link>
                         <Link
                             href="/#projects-section"
-                            className="mx-4">Projects
+                                className="mx-4">
+                                <motion.div
+                                initial={{ y: -100, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.06 }}
+                                whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}>
+                                    Projects
+                                </motion.div>
                         </Link>
                         <Link
                             href="/#about-section"
-                            className="mx-4">About
+                                className="mx-4">
+                                <motion.div
+                                initial={{ y: -100, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.07 }}
+                                whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}>
+                                    About
+                                </motion.div>
                         </Link>
                         <Link
                             href={'/contact'}
-                            className="ml-4">Contact
+                                className="ml-4">
+                                <motion.div
+                                initial={{ y: -100, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.08 }}
+                                whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}>
+                                    Contact
+                                </motion.div>
                         </Link>
-                    <span className="mx-4">
+                            <motion.span
+                                initial={{ y: -100, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.09 }}
+                                whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}
+                                className="mx-4">
                     <ThemeSwitcher />
-                    </span>
+                    </motion.span>
                 </nav>
-                </div>
-                <button
+                    </div>
+                    <motion.div
+                    initial={{ y: -100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.07, type: "spring", stiffness: 400, damping: 10 }}>
+                    <motion.button
+                        variants={variants}
+                        initial="rest"
+                        whileHover="hover"
+                        animate="rest"
                     onClick={handleClick}
-                    className="mr-6 mb-2 sm:hidden">
+                    className="mr-6 mt-4 sm:hidden">
                 <GiHamburgerMenu className="w-6 h-6" />
-                </button>
+                        </motion.button>
+                    </motion.div>
                 {isDropOpen && <DropMenu />}
-            </div>
-</div>
+                </div>
+                </div>
+</header>
 
     )
 }
