@@ -20,7 +20,7 @@ type Project = {
     
 
 const carousel: KeenSliderPlugin = (slider) => {
-    const z = window.innerWidth * 1.1;
+    const z = window.innerWidth * 1;
     function rotate() {
         // Check if slider.track.details is not null before using it
         if (slider.track && slider.track.details) {

@@ -33,7 +33,7 @@ scroll-behavior: smooth !important;
   position: relative;
   width: 100%; 
   height: auto;
-  perspective: 1000px;
+  perspective: 35rem;
 }
 
 .scene .carousel.keen-slider {
@@ -57,11 +57,11 @@ scroll-behavior: smooth !important;
   object-fit: cover;
 }
 
-@media (min-width: 25rem) { 
+@media (min-width: 24rem) { 
   .scene {
     width: 25rem;
     height: 19rem; 
-    perspective: 78.125rem; 
+    perspective: 50rem; 
   }
 
 
@@ -81,7 +81,7 @@ scroll-behavior: smooth !important;
   .scene {
     width: 38rem;
     height: 30rem; 
-    perspective: 93.75rem; 
+    perspective: 60rem; 
   }
 
 
@@ -101,7 +101,7 @@ scroll-behavior: smooth !important;
   .scene {
     width: 43rem; 
     height: 36rem; 
-    perspective: 109.375rem; 
+    perspective: 75rem; 
   }
 
 
