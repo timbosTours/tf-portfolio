@@ -10,7 +10,7 @@ const mainFont = Antic_Didone({
     subsets: ['latin']
 })
 
-const textTransition = { type: "spring", stiffness: 300, damping: 20, when: "beforeChildren" };
+const textTransition = { duration: 0.2, type: "spring", stiffness: 400, damping: 10 };
 
 const variantsOne = {
     initial: { opacity: 1 },
@@ -24,7 +24,7 @@ const variantsTwo = {
 
 const textVariants = {
     initial: { scale: 1 },
-    hover: { scale: 1.2 },
+    hover: { scale: [1.2, 0.9, 1.2] },
     leave: { scale: 1 }
 };
 

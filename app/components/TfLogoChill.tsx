@@ -11,7 +11,7 @@ const carter = Carter_One({
     subsets: ['latin']
 })
 
-const textTransition = { type: "spring", stiffness: 300, damping: 20, when: "beforeChildren" };
+const textTransition = { duration: 0.2, type: "spring", stiffness: 400, damping: 10 };
 
 const variantsOne = {
     initial: { opacity: 1 },
