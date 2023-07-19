@@ -23,15 +23,15 @@ export default function Loading() {
     const getLoadingMessage = (percent: number) => {
         if (percent < 15) return "Initializing...";
         else if (percent < 35) return "Loading JSX...";
-        else if (percent < 55) return "Laoding Assets...";
-        else if (percent < 75) return "Laiding Good Vibes...";
+        else if (percent < 55) return "Loading Assets...";
+        else if (percent < 75) return "Loading Good Vibes...";
         else if (percent < 99) return "Loading Animations";
         else return "Almost There!";
     };
 
     return (
             <div className="flex flex-col items-center justify-center min-h-screen bg-zinc-800">
-            <div className="flex items-center w-96">
+            <div className="flex items-center w-72 sm:w-96">
                 <div className="h-9 flex-grow bg-zinc-800 border border-amber-100 relative">
                     <div className="absolute top-0 left-0 h-full w-full p-0.5">
                         <motion.div
@@ -45,7 +45,7 @@ export default function Loading() {
                     {percent}%
                 </div>
             </div>
-            <div className="mt-2 text-amber-100 text-xl w-96 text-left">
+            <div className="mt-2 text-amber-100 text-xl w-72 sm:w-96 text-left">
                 {getLoadingMessage(percent)}
             </div>
         </div>
