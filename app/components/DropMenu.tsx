@@ -40,13 +40,13 @@ export default function DropMenu() {
     }, [isOpen]);
 
     return (
-        <AnimatePresence>
+        <AnimatePresence mode='wait'>
         {isOpen ? (
         <motion.div
                     ref={node}
                     initial={{ opacity: 0, y: -20 }}  
                     animate={{ opacity: 1, y: 0 }} 
-                    exit={{ opacity: 0, y: -20 }} 
+                    exit={{ opacity: 0, y: 20, transition: {delay: 0.4}}} 
                     transition={{ duration: 0.2, mass: 1, type: "spring"}} 
             className=" sm:hidden absolute h-96 w-56 xs:w-80 bg-amber-100 dark:bg-columbiaBlue-700 rounded-lg right-6 mt-6 z-20">
             {/* Pro theme dropdown navigation */}
@@ -60,7 +60,8 @@ export default function DropMenu() {
                             <motion.div
                             initial={{ y: -50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.2 }}
+                                transition={{ delay: 0.2 }}
+                                exit={{y:50, opacity: 0 }}
                             whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}
                             whileTap={{scale: 0.9}}>
                                 Home
@@ -71,7 +72,8 @@ export default function DropMenu() {
                             <motion.div
                             initial={{ y: -50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.3 }}
+                                transition={{ delay: 0.3 }}
+                                exit={{y:50, opacity: 0 }}
                             whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}
                             whileTap={{scale: 0.9}}>
                                 Projects
@@ -82,7 +84,8 @@ export default function DropMenu() {
                             <motion.div
                             initial={{ y: -50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.4 }}
+                                transition={{ delay: 0.4 }}
+                                exit={{y:50, opacity: 0 }}
                             whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}
                             whileTap={{scale: 0.9}}>
                                 About
@@ -93,7 +96,8 @@ export default function DropMenu() {
                             <motion.div
                             initial={{ y: -50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.5 }}
+                            exit={{y:50, opacity: 0 }}
+                                transition={{ delay: 0.5 }}
                             whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}
                             whileTap={{scale: 0.9}}>
                                 Contact
@@ -102,7 +106,8 @@ export default function DropMenu() {
                         <motion.div
                         initial={{ y: -50, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.6 }}
+                        exit={{y:50, opacity: 0 }}
+                            transition={{ delay: 0.6 }}
                         whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}
                             whileTap={{ scale: 0.9 }}>
                             <ThemeSwitcher />

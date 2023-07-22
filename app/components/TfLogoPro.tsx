@@ -24,7 +24,7 @@ const variantsTwo = {
 
 const textVariants = {
     initial: { scale: 1 },
-    hover: { scale: [1.2, 0.9, 1.2] },
+    hover: { scale: 1.2 },
     leave: { scale: 1 }
 };
 
