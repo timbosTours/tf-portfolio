@@ -180,7 +180,8 @@ export default function NavBar() {
                     initial={{ y: -100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.07, type: "spring", stiffness: 400, damping: 10 }}>
-                    <motion.button
+                        <motion.button
+                        aria-label="drop down menu"
                         variants={variants}
                         initial="rest"
                         whileHover="hover"
