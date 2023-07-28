@@ -41,18 +41,20 @@ export default async function Home() {
       </section>
 
       {/* Pro About Section */}
+      <section aria-label='about section' id='about-section'>
 
-      <section tabIndex={0} aria-label='about section' id='about-section' className='h-screen w-full bg-zinc-800 flex dark:hidden flex-col flex-grow justify-center md:flex-row md:justify-between overflow-hidden dark:bg-mountbattenpink-700'>
+      <div tabIndex={0} className='h-screen w-full bg-zinc-800 flex dark:hidden flex-col flex-grow justify-center md:flex-row md:justify-between overflow-hidden dark:bg-mountbattenpink-700'>
         
       <ProAboutSection/>
 
-      </section>
+      </div>
 
       {/* About Section Chill */}
 
-      <section tabIndex={0} aria-label='about section' id='about-section' className='hidden min-h-screen w-full dark:flex  flex-col justify-center xl:flex-row md:justify-between overflow-hidden dark:bg-mountbattenpink-700'>
+      <div tabIndex={0} className='hidden min-h-screen w-full dark:flex  flex-col justify-center xl:flex-row md:justify-between overflow-hidden dark:bg-mountbattenpink-700'>
         <ChillAboutSection/>
 
+        </div>
       </section>
       <Footer/>
     </main>
