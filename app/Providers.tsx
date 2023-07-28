@@ -18,5 +18,5 @@ export default function Providers({
         return <>{ children }</>
     }
 
-        return <ThemeProvider enableSystem={false} attribute='class'>{ children }</ThemeProvider>
+        return <ThemeProvider attribute='class'>{ children }</ThemeProvider>
 }

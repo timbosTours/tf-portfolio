@@ -15,6 +15,7 @@ const roboto = Roboto({
     subsets: ['latin']
 })
 
+// Type definition for the form data
 type FormData = {
     access_key: string;
     subject: string;
@@ -23,58 +24,63 @@ type FormData = {
     name: string;
     email: string;
     message: string;
-    };
+};
 
+// Contact form component
 export default function ContactForm() {
+    // Using react-hook-form for form state management
     const {
-        register,
-        handleSubmit,
-        setValue,
-        reset,
+        register, // function to register input
+        handleSubmit, // function to handle form submit
+        setValue, // function to manually set form value
+        reset, // function to reset the form
         control,
-        formState: { errors, isSubmitSuccessful, isSubmitting }, watch
+        formState: { errors, isSubmitSuccessful, isSubmitting }, // form state
+        watch // function to watch form value change
     } = useForm<FormData>({
-        mode: "onTouched",
+        mode: "onTouched", // validate form on touch
     });
-    const name  = watch("name");
-    const [isSuccess, setIsSuccess] = useState(false);
-    const [Message, setMessage] = useState("");
+    const name  = watch("name"); // watching name value change
+    const [isSuccess, setIsSuccess] = useState(false); // state for form submit success
+    const [Message, setMessage] = useState(""); // state for response message
 
-
+    // Effect hook to set the subject of the email when the name changes
     useEffect(() => {
         setValue("subject", `${name ? name : "Someone"} sent a message from Website`);
     }, [name, setValue]);
 
+    // Handler for form submission
     const onSubmit = async (data: FormData, e?: React.BaseSyntheticEvent) => {
         console.log(data);
+        // Fetching from an API
         await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
+            method: "POST", // HTTP method
+            headers: { // HTTP headers
+                "Content-Type": "application/json",
+                Accept: "application/json",
             },
-            body: JSON.stringify(data, null, 2),
+            body: JSON.stringify(data, null, 2), // body of the request
         })
-        .then(async (response) => {
-            let json = await response.json();
-            if (json.success) {
-            setIsSuccess(true);
-            setMessage(json.message);
-            if (e) {
-                e.target.reset();
-            }
-            reset();
-            } else {
-            setIsSuccess(false);
-            setMessage(json.message);
+        .then(async (response) => { // handling response
+            let json = await response.json(); // parsing JSON response
+            if (json.success) { // handling successful response
+                setIsSuccess(true);
+                setMessage(json.message);
+                if (e) {
+                    e.target.reset();
+                }
+                reset();
+            } else { // handling error from the API
+                setIsSuccess(false);
+                setMessage(json.message);
             }
         })
-        .catch((error) => {
+        .catch((error) => { // handling network or other errors
             setIsSuccess(false);
             setMessage("Client Error. Please check the console.log for more info");
             console.log(error);
         });
-        };
+    };
 
     return (
         <div className="min-h-screen bg-zinc-800 flex flex-col dark:bg-mountbattenpink-700">
