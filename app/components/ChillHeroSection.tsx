@@ -41,7 +41,7 @@ export default function ChillHeroSection() {
     const animation7 = useAnimation();
     const animation8 = useAnimation();
     
-
+    
     useEffect(() => {
     // Reset animations
     animation1.set({ y: 50, opacity: 0 });
@@ -62,7 +62,7 @@ export default function ChillHeroSection() {
     animation6.start({ y: 0, opacity: 1, transition: { delay: 2 } });
     animation7.start({ y: 0, opacity: 1, transition: { delay: 2.2 } });
     animation8.start({ y: 0, opacity: 1, transition: { delay: 2.3 } });
-}, [theme]);
+}, [theme, animation1, animation2, animation3, animation4, animation5, animation6, animation7, animation8]);
     return (
         <>
             <div className='flex flex-row justify-between min-h-screen pt-44 pl-10 sm:pl-28 overflow-hidden'>
@@ -75,7 +75,7 @@ export default function ChillHeroSection() {
                     initial={{ y: 50, opacity: 0 }}
                     animate={animation1}
                     tabIndex={0}
-                    className={`${roboto.className} hidden dark:block mx-auto text-zinc-800 font-medium lg:text-lg`}>Hello friends, I'm Tim
+                    className={`${roboto.className} hidden dark:block mx-auto text-zinc-800 font-medium lg:text-lg`}>Hello friends, I&apos;m Tim
                 </motion.h1>
                         
             {/* Second heading */}

@@ -55,7 +55,7 @@ export default function ProHeroSection() {
         animation6.start({ y: 0, opacity: 1, transition: { delay: 2 } });
         animation7.start({ y: 0, opacity: 1, transition: { delay: 2.2 } });
         animation8.start({ y: 0, opacity: 1, transition: { delay: 2.3 } });
-    }, [theme]);
+    }, [theme, animation1, animation2, animation3, animation4, animation5, animation6, animation7, animation8]);
 
     return (
         <div className='flex flex-col  mt-44 dark:block dark:ml-24 dark:mt-56'>
