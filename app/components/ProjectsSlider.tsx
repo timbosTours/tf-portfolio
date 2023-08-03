@@ -9,7 +9,6 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 
-// Define a type for your project data
 type Project = {
     _id: string;
     url: string;
@@ -60,7 +59,6 @@ export default function ProjectsSlider() {
         [carousel]
     );
 
-    // Fetch your data
     useEffect(() => {
         const fetchData = async () => {
         const data = await getProjects();

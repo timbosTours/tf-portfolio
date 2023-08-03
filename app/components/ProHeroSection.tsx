@@ -97,18 +97,18 @@ export default function ProHeroSection() {
 
             {/* Infinite code SVG */}
 
-            <motion.span
+            <motion.div
                 ref={ref4}
                 initial={{ y: 50, opacity: 0 }}
                 animate={animation4}
                 transition={{ delay: 1.3 }}
                 className='mx-auto mt-4 scale-75 dark:hidden'>
             <InfiniteCode />
-            </motion.span>
+            </motion.div>
 
             {/* Lets talk button, routes to contact page */}
 
-            <motion.span
+            <motion.div
                 ref={ref5}
                 initial={{ y: 50, opacity: 0 }}
                 animate={animation5}
@@ -123,16 +123,16 @@ export default function ProHeroSection() {
             Lets Talk!
             </motion.div>
             </Link>
-            </motion.span>
+            </motion.div>
 
             {/* Wrapper for location and social link */}
 
-            <motion.span
+            <motion.div
                 ref={ref6}
                 initial={{ y: 50, opacity: 0 }}
                 animate={animation6}
                 transition={{ delay: 2 }}
-                className='flex justify-center mt-16'
+                className='flex justify-center mt-32'
             >
                 
                 {/* Location, Tasmania Australia */}
@@ -152,7 +152,7 @@ export default function ProHeroSection() {
                 {/* Social Links with wrappers for animations */}
 
 
-                <motion.span
+                <motion.div
                     ref={ref8}
                     initial={{ y: -50, opacity: 0 }}
                     animate={animation8}
@@ -207,10 +207,10 @@ export default function ProHeroSection() {
                             <AiOutlineTwitter className='fill-amber-100 mx-2 h-6 w-6' />
                         </motion.div>
                     </Link>
-                </motion.span>
+                </motion.div>
 
 
-                </motion.span>
+                </motion.div>
 
 
         </div>

@@ -5,8 +5,6 @@ import { Suspense } from 'react'
 import Loading from './components/Loading';
 
 
-
-
 const roboto = Roboto({
   weight: '400',
   subsets: ['latin']
@@ -15,7 +13,7 @@ const roboto = Roboto({
 
 export const metadata = {
   title: 'Timothy Fawcett Developer Portfolio',
-  description: 'My Creative Portfolio',
+  description: 'My Creative Portfolio'
 }
 
 

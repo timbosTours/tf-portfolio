@@ -45,8 +45,8 @@ export default function ProAboutSection() {
         }
     }, [inView1, inView2, inView3, inView4, animation1, animation2, animation3, animation4]);
     return (
-        <>
-            <div className='min-h-screen m-4 md:ml-20 mx-auto md:w-2/5 mt-10 md:mt-40 h-1/2 md:h-full'>
+        <div className="min-h-screen flex flex-col md:flex-row ">
+            <div className='relative m-4 md:ml-20 mx-auto md:w-2/5 mt-10 md:mt-40 align-middle h-1/2 md:h-full'>
                 <motion.div ref={ref1}
                     initial={{ x: -50, opacity: 0}}
                     animate={animation1}
@@ -70,7 +70,7 @@ export default function ProAboutSection() {
                     /> I am currently building with...
                 </motion.p>
             </div>
-            <span className="relative h-2/5 sm:h-2/3 w-2/3 rounded-full my-auto scale-50 sm:scale-75 lg:scale-100 mx-auto">
+            <div className="relative md:w-1/3 h-2/3 w-2/3 rounded-full scale-50 sm:scale-75 md:scale-50 lg:scale-90 xl:scale-100 mx-auto md:my-auto">
                 <motion.span ref={ref4}
                     initial={{ x: -50, opacity: 0, scale: 0.1 }}
                 animate={animation4}
@@ -89,7 +89,7 @@ export default function ProAboutSection() {
                 })}
             </div>
                 </motion.span>
-            </span>
-        </>
+            </div>
+        </div>
     )
 }

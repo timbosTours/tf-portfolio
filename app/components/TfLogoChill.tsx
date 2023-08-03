@@ -41,7 +41,7 @@ export default function TfLogo() {
     return (
         <div className='m-2'>
         <Link tabIndex={-1} href={'/'} className={carter.className}>
-            <motion.span 
+            <motion.div
                 className="relative h-12 w-12 inline-block" 
                 onHoverStart={() => { setIsHovered(true); setTextHovered(true); setIsAnimating(true); }} 
                 onHoverEnd={() => { setIsHovered(false); setTextHovered(false); setIsAnimating(false); }}
@@ -71,7 +71,7 @@ export default function TfLogo() {
                 >
                     TF
                 </motion.div>
-            </motion.span>
+            </motion.div>
             </Link>
         </div>
     )

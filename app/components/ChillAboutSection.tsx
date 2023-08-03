@@ -51,7 +51,7 @@ export default function ChillAboutSection() {
                     animate={animation1}
                     className="mx-auto xs:mt-10 mb-10 relative w-48 h-48 rounded-full overflow-hidden">
                     <Image
-                        src="/webDevImageBlueBG.png"
+                        src="/8bit-snowboarder-blueBg.png"
                         alt="Timothy Fawcett"
                         height={200}
                         width={200}

@@ -2,8 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useTheme } from 'next-themes'
 
 export default function Loading() {
+    const theme = useTheme(); 
     const [percent, setPercent] = useState(0);
     const [isLoadingComplete, setIsLoadingComplete] = useState(false);
 

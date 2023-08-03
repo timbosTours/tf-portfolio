@@ -1,6 +1,7 @@
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import { Antic_Didone } from 'next/font/google';
+import SnowFlakeAnimation from './components/SnowFlakeAnimation';
 
 import ProHeroSection from './components/ProHeroSection';
 import ChillHeroSection from './components/ChillHeroSection';
@@ -29,6 +30,9 @@ export default async function Home() {
 
       {/* Chill Hero Section */}
       <section className={`${mainFont.className} hidden dark:block min-h-screen w-full justify-center`}>
+        <div className="absolute z-50">
+                    <SnowFlakeAnimation />
+                </div>
       <ChillHeroSection/>
       </section>
 

@@ -20,18 +20,18 @@ const carter = Carter_One({
 })
 
 const variants = {
-  hover: { 
-    rotate: [0, 5, -5, 5, -5, 0], // change values for your desired wiggle
-    transition: {
-      duration: 0.5, // speed of wiggle
+    hover: { 
+        rotate: [0, 5, -5, 5, -5, 0], 
+        transition: {
+        duration: 0.5, 
+        },
     },
-  },
-  rest: { 
-    rotate: 0,
-    transition: {
-      duration: 0.5, // speed of return to original state
+    rest: { 
+        rotate: 0,
+        transition: {
+        duration: 0.5,
+        },
     },
-  },
 };
 
 export default function NavBar() {
@@ -109,14 +109,6 @@ export default function NavBar() {
                                     Contact
                                 </motion.div>
                         </Link>
-                            <motion.span
-                                initial={{ y: -100, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.09 }}
-                                whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}
-                                className="mx-4">
-                    <ThemeSwitcher />
-                    </motion.span>
                 </nav>
 
                 {/* Chill theme navigation */}
@@ -166,14 +158,7 @@ export default function NavBar() {
                                     Contact
                                 </motion.div>
                         </Link>
-                            <motion.span
-                                initial={{ y: -100, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.09 }}
-                                whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}
-                                className="mx-4">
-                    <ThemeSwitcher />
-                    </motion.span>
+                            
                 </nav>
                     </div>
                     <motion.div

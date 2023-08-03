@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { useTheme } from "next-themes"
+import { FaSnowboarding } from 'react-icons/fa'
+import { FaUserSecret } from 'react-icons/fa'
 
 export const ThemeSwitcher = () => {
     const [mounted, setMounted] = useState(false)
@@ -24,8 +26,8 @@ export const ThemeSwitcher = () => {
 
     return (
         <div>
-            <button aria-label="switch visual theme" className="text-xl sm:text-base dark:hidden mx-auto sm:ml-4 md:mr-0 my-5 sm:my-0" onClick={toggleTheme}>Too Serious?</button>
-            <button aria-label="switch visual theme" className="text-xl sm:text-base hidden dark:block mx-auto sm:ml-4 md:mr-0 my-5 sm:my-0" onClick={toggleTheme}>Too Chill?</button>
+            <button aria-label="switch visual theme" className="dark:hidden" onClick={toggleTheme}><FaSnowboarding className="fill-amber-100"/></button>
+            <button aria-label="switch visual theme" className="hidden dark:inline" onClick={toggleTheme}><FaUserSecret className="fill-columbiaBlue-700"/></button>
         </div>
     )
 }

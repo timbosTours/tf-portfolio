@@ -8,6 +8,7 @@ import { Roboto } from 'next/font/google';
 import {useEffect, useRef} from 'react'
 import { motion, useAnimation} from 'framer-motion'
 import { useTheme } from "next-themes";
+import SnowFlakeAnimation from "./SnowFlakeAnimation";
 
 const carter = Carter_One({
     weight: ['400'],
@@ -104,7 +105,7 @@ export default function ChillHeroSection() {
             
             {/* Reach out button, routes to contact page */}
 
-            <motion.span ref={ref4}
+            <motion.div ref={ref4}
                 initial={{ y: 50, opacity: 0 }}
                 animate={animation4}
             >
@@ -120,14 +121,14 @@ export default function ChillHeroSection() {
                                     Reach Out!
                                 </motion.div>
                             </Link>
-                        </motion.span>
+                        </motion.div>
                     </div>
                     
                                 
                     {/* Computer SVG */}
                     
 
-            <span className='max-w-2xl mr-14 sm:mt-24 lg:ml-2 absolute right-6 sm:right-24 md:right-32 lg:right-48 bottom-2 sm:bottom-20  xl:right-72 scale-75 sm:scale-100 lg:scale-125 xl:scale-150 '>
+            <div className='max-w-2xl mr-14 sm:mt-24 lg:ml-2 absolute right-6 sm:right-24 md:right-32 lg:right-48 bottom-2 sm:bottom-20  xl:right-72 scale-75 sm:scale-100 lg:scale-125 xl:scale-150 '>
             <motion.div ref={ref5}
                 initial={{x: 150, opacity: 0}}        
                 animate={animation5}
@@ -135,13 +136,13 @@ export default function ChillHeroSection() {
                 >
                     <ComputerImage />
                         </motion.div>
-                    </span>
+                    </div>
             </div>
             </div>
 
             {/* Wrapper for location and social links */}
 
-            <motion.span ref={ref6}
+            <motion.div ref={ref6}
                 initial={{ y: 50, opacity: 0 }}
                 animate={animation6}
                 className='flex justify-center mb-10 '>
@@ -157,7 +158,7 @@ export default function ChillHeroSection() {
                 </motion.p>
                 
             {/* Social links with wrappers for animation */}
-                <motion.span ref={ref8}
+                <motion.div ref={ref8}
                     initial={{ y: -50, opacity: 0 }}
                     animate={animation8}
                     className='flex flex-row sm:ml-4  -mt-10'>
@@ -203,8 +204,8 @@ export default function ChillHeroSection() {
                                 className='fill-zinc-800 mx-2 h-6 w-6' />
                         </motion.div>
                     </Link>
-        </motion.span>
-        </motion.span>
+        </motion.div>
+        </motion.div>
         </>
     )
 }

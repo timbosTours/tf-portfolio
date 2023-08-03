@@ -84,8 +84,12 @@ export default function ContactForm() {
 
     return (
         <div className="min-h-screen bg-zinc-800 flex flex-col dark:bg-mountbattenpink-700">
-            <NavBar/>
-        <div tabIndex={0} aria-label="Contact form" className="min-h-screen flex items-center justify-center">
+            <NavBar />
+            
+            {/* contact form */}
+            <div tabIndex={0} aria-label="Contact form" className="min-h-screen flex items-center justify-center">
+                
+            {/* hide form when succesful */}
             {!isSubmitSuccessful && (
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input
@@ -109,6 +113,9 @@ export default function ContactForm() {
                 style={{ display: "none" }}
                 {...register("botcheck")}></input>
 
+                        
+                {/* Name field */}
+
                         <div className="mb-5">
                 <label tabIndex={0} className="block text-amber-100 dark:text-zinc-800">Name</label>
                 <input
@@ -126,7 +133,9 @@ export default function ContactForm() {
                     <small>{errors.name.message}</small>
                     </div>
                 )}
-                </div>
+                        </div>
+                        
+                {/* Email field */}
 
                 <div className="mb-5">
                 <label tabIndex={0} htmlFor="email_address" className="block text-amber-100 dark:text-zinc-800">
@@ -153,6 +162,8 @@ export default function ContactForm() {
                 )}
                 </div>
 
+                {/* Message field */}
+                    
                         <div className="mb-3">
                 <label tabIndex={0} className="block text-amber-100 dark:text-zinc-800">Message</label>
                 <textarea
@@ -168,6 +179,8 @@ export default function ContactForm() {
                 )}
                 </div>
 
+                {/* Submit button */}
+                
                 <button
                 type="submit"
                 className="px-10 py-3 mt-6 bg-zinc-800 border-2 border-amber-100 text-lg text-amber-100 rounded dark:bg-mountbattenpink-700 dark:border-zinc-800 dark:text-columbiaBlue-700">
@@ -194,7 +207,9 @@ export default function ContactForm() {
                 )}
                 </button>
             </form>
-            )}
+                )}
+                
+            {/* Messsage to show when form is succesfully submitted */}
             {isSubmitSuccessful && isSuccess && (
             <>
                 <div className="flex flex-col items-center justify-center text-center text-zin-800 rounded-md">
@@ -222,6 +237,8 @@ export default function ContactForm() {
             </>
             )}
 
+            {/* message to show when submit is NOT succesful */}
+            
             {isSubmitSuccessful && !isSuccess && (
             <div className="flex flex-col items-center justify-center text-center text-amber-100 dark:text-zinc-800 rounded-md">
                 <svg
@@ -247,7 +264,8 @@ export default function ContactForm() {
                 </button>
             </div>
             )}
-        </div>
+            </div>
+            {/* social media links */}
             <div className="flex flex-row mx-auto -mt-28 mb-12">
                 <p tabIndex={0} className="text-amber-100 md:text-xl md:pt-1 dark:text-zinc-800">Or connect with me on...</p>
                 <span className='flex flex-row ml-4'>
