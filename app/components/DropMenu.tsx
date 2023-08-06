@@ -48,7 +48,7 @@ export default function DropMenu() {
                     animate={{ opacity: 1, y: 0 }} 
                     exit={{ opacity: 0, y: 20, transition: {delay: 0.4}}} 
                     transition={{ duration: 0.2, mass: 1, type: "spring"}} 
-            className=" sm:hidden absolute h-96 w-56 xs:w-80 bg-amber-100 dark:bg-columbiaBlue-700 rounded-lg right-6 mt-6 z-20">
+            className=" sm:hidden absolute h-80 w-52 xs:w-72 bg-amber-100 dark:bg-columbiaBlue-700 rounded-lg right-12 mt-6 z-20">
             {/* Pro theme dropdown navigation */}
 
             <nav

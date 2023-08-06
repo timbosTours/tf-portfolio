@@ -159,7 +159,12 @@ export default function NavBar() {
                                 </motion.div>
                         </Link>
                             
-                </nav>
+                        </nav>
+                        <div className="mt-4 ml-6">
+                        </div>
+                    </div>
+                    <div className="absolute right-4 top-4">
+                        <ThemeSwitcher />
                     </div>
                     <motion.div
                     initial={{ y: -100, opacity: 0 }}
@@ -172,13 +177,13 @@ export default function NavBar() {
                         whileHover="hover"
                         animate="rest"
                     onClick={handleClick}
-                    className="mr-6 mt-4 sm:hidden">
+                    className="mr-12 mt-4 sm:hidden">
                 <GiHamburgerMenu className="w-6 h-6" />
                         </motion.button>
                     </motion.div>
                 {isDropOpen && <DropMenu />}
                 </div>
-                </div>
+            </div>
 </header>
 
     )

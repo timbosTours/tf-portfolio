@@ -6,7 +6,6 @@ import { AiOutlineGithub } from 'react-icons/ai'
 import { AiOutlineTwitter } from 'react-icons/ai'
 import { AiFillLinkedin } from 'react-icons/ai'
 import { motion } from "framer-motion";
-import { ThemeSwitcher } from "./ThemeSwitcher";
 
 const roboto = Roboto({
     weight: ['400'],
@@ -77,9 +76,6 @@ export default function Footer() {
                                 transition={{ delay: 0.09 }}
                                 whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}
                 className="text-center">
-                <Link href={'/'}>
-                    <ThemeSwitcher />
-                </Link>
                     </motion.div>
         </footer>
     </>)

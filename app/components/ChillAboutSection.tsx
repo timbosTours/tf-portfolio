@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import { SiNextdotjs, SiReact, SiTypescript, SiJavascript, SiHtml5, SiTailwindcss, SiCss3, SiSass } from "react-icons/si"
 import { Roboto } from 'next/font/google';
 import { motion, useAnimation, useInView } from "framer-motion";
+import Link from "next/link";
 
 const roboto = Roboto({
     weight: ['300', '400', '500'],
@@ -65,7 +66,7 @@ export default function ChillAboutSection() {
                     animate={animation2}
                     tabIndex={0}
                     className={`${roboto.className} text-zinc-800 max-w-xl mx-12 pb-4 text-xs xs:text-sm md:text-lg text-center xl:text-left`}>
-                    G&apos;day, I&apos;m Tim! A self-taught developer working remotely from beautiful Northern Tasmania. Before discovering my love for web development, I spent most of my life traveling and working in a wide variety of industries and jobs, primarily in marine tourism, hospitality, and wine, with plenty of hard yakka to get by along the way. I am currently diving deep into design and SEO and am always open to learning new tech! 
+                    G&apos;day, I&apos;m Tim! But my friends usually call me Timbo. When I'm not using the latest tech to create beautiful, interactive web experiences that have excellent performance, accessibility and SEO. I like to get outdoors, I love playing in the snow, playing my guitar, and going on adventures with my cats, Vino & Zola! Prior to finding my love of web design/development, I spent my life traveling, working in mostly Tourism and Hospitality. I am always looking to <Link className="underline" href="/contact">connect</Link> with like-minded people who are passionate about creating memorable experiences.
                 </motion.p>
                 <br />
                 <br /> 

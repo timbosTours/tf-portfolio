@@ -13,7 +13,7 @@ const roboto = Roboto({
 
 export const metadata = {
   title: 'Timothy Fawcett Developer Portfolio',
-  description: 'My Creative Portfolio'
+  description: 'My Creative Portfolio',
 }
 
 

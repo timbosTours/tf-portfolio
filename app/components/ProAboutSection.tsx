@@ -5,6 +5,7 @@ import { SiNextdotjs, SiReact, SiTypescript, SiJavascript, SiHtml5, SiCss3, SiSa
 import { Antic_Didone } from 'next/font/google';
 import { useRef, useEffect } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
+import Link from "next/link";
 
 
 const mainFont = Antic_Didone({
@@ -62,7 +63,7 @@ export default function ProAboutSection() {
                     initial={{ x: -50, opacity: 0}}
                     animate={animation2}
                     tabIndex={0}
-                    className={`${mainFont.className} text-amber-100 mx-6 text-xs xs:text-sm md:text-md xl:text-xl text-center md:text-left`}>G&apos;day, I&apos;m Tim! A self-taught developer working remotely from beautiful Northern Tasmania. Before discovering my love for web development, I spent most of my life traveling and working in a wide variety of industries and jobs, primarily in marine tourism, hospitality, and wine, with plenty of hard yakka to get by along the way. I am currently diving deep into design and SEO and am always open to learning new tech!
+                    className={`${mainFont.className} text-amber-100 mx-6 text-xs xs:text-sm md:text-md xl:text-xl text-center md:text-left`}>G&apos;day, I&apos;m Tim! A self-taught web developer/designer from beautiful Northern Tasmania. I use modern technology to craft digital experiences that will make brands stand out! My designs are responsive, accessible, and built with an emphasis on performance and SEO. I'm open to both freelance collaborations and contributing to a progressive team environment. If you're seeking a blend of innovation and efficiency, whether for a team or a project, let's <Link className="underline" href="/contact">connect</Link> and create unparalleled digital solutions together
                     <br />
                     <motion.br ref={ref3}
                         initial={{ x: -50, opacity: 0 }}
