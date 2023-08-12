@@ -9,7 +9,7 @@ const ChillHeroSection = dynamic(() => import('./components/ChillHeroSection'), 
   
 });
 const ProjectsSection = dynamic(() => import('./components/ProjectsSection'), {
-
+  ssr: false,
 });
 const ProAboutSection = dynamic(() => import('./components/ProAboutSection'), {
   
