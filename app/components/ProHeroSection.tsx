@@ -10,7 +10,7 @@ import { useTheme } from "next-themes";
 
 
 const roboto = Roboto({
-    weight: ['300', '400', '500'],
+    weight: ['300'],
     subsets: ['latin']
 })
 
@@ -48,13 +48,13 @@ export default function ProHeroSection() {
 
         // Trigger animations
         animation1.start({ y: 0, opacity: 1, transition: { delay: 0.2 } });
-        animation2.start({ y: 0, opacity: 1, transition: { delay: 0.5 } });
-        animation3.start({ y: 0, opacity: 1, transition: { delay: 0.9 } });
-        animation4.start({ y: 0, opacity: 1, transition: { delay: 1.3 } });
-        animation5.start({ y: 0, opacity: 1, transition: { delay: 1.6 } });
-        animation6.start({ y: 0, opacity: 1, transition: { delay: 2 } });
-        animation7.start({ y: 0, opacity: 1, transition: { delay: 2.2 } });
-        animation8.start({ y: 0, opacity: 1, transition: { delay: 2.3 } });
+        animation2.start({ y: 0, opacity: 1, transition: { delay: 0.4 } });
+        animation3.start({ y: 0, opacity: 1, transition: { delay: 0.6 } });
+        animation4.start({ y: 0, opacity: 1, transition: { delay: 0.8 } });
+        animation5.start({ y: 0, opacity: 1, transition: { delay: 1 } });
+        animation6.start({ y: 0, opacity: 1, transition: { delay: 1.2 } });
+        animation7.start({ y: 0, opacity: 1, transition: { delay: 1.4 } });
+        animation8.start({ y: 0, opacity: 1, transition: { delay: 1.6 } });
     }, [theme, animation1, animation2, animation3, animation4, animation5, animation6, animation7, animation8]);
 
     return (
