@@ -1,9 +1,14 @@
 'use client'
 
-import ProjectsSlider from "./ProjectsSlider";
+
 import { Antic_Didone } from 'next/font/google';
 import { Carter_One } from 'next/font/google';
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+
+const ProjectsSlider = dynamic(() => import('./ProjectsSlider'), {
+    loading: () => <h3>Loading Projects...</h3>
+});
 
 
 const mainFont = Antic_Didone({
