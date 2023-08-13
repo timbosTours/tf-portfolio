@@ -5,7 +5,6 @@ import { SiNextdotjs, SiReact, SiTypescript, SiJavascript, SiHtml5, SiCss3, SiSa
 import { Antic_Didone } from 'next/font/google';
 import { useRef, useEffect } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
-import Link from "next/link";
 
 
 const mainFont = Antic_Didone({
@@ -54,7 +53,7 @@ export default function ProAboutSection() {
                     className=""
                 >
                 <Image
-                    src={'/webDevDisplay1.jpeg'} alt={'Timothy Fawcett'}
+                    src={'/webDevDisplay.webp'} alt={'Timothy Fawcett'}
                     height={200}
                     width={200} className='mx-auto lg:ml-16 rounded-full scale-50 md:scale-100 filter sepia contrast-75 brightness-90 md:mb-10'>
                     </Image>

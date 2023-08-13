@@ -5,7 +5,6 @@ import { useEffect, useRef } from "react";
 import { SiNextdotjs, SiReact, SiTypescript, SiJavascript, SiHtml5, SiTailwindcss, SiCss3, SiSass } from "react-icons/si"
 import { Roboto } from 'next/font/google';
 import { motion, useAnimation, useInView } from "framer-motion";
-import Link from "next/link";
 
 const roboto = Roboto({
     weight: ['300', '400', '500'],
@@ -52,7 +51,7 @@ export default function ChillAboutSection() {
                     animate={animation1}
                     className="mx-auto xs:mt-10 mb-10 relative w-48 h-48 rounded-full overflow-hidden">
                     <Image
-                        src="/8bit-snowboarder-blueBg.png"
+                        src="/8bit-snowboarder-blueBg.webp"
                         alt="Timothy Fawcett"
                         height={200}
                         width={200}
