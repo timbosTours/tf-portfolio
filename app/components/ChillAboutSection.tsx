@@ -66,7 +66,7 @@ export default function ChillAboutSection() {
                     animate={animation2}
                     tabIndex={0}
                     className={`${roboto.className} text-zinc-800 max-w-xl mx-12 pb-4 text-xs xs:text-sm md:text-lg text-center xl:text-left`}>
-                    G&apos;day, I&apos;m Tim! But my friends usually call me Timbo. When I&apos;m not using the latest tech to create beautiful, interactive web experiences that have excellent performance, accessibility and SEO. I like to get outdoors, I love playing in the snow, playing my guitar, and going on adventures with my cats, Vino & Zola! Prior to finding my love of web design/development, I spent my life traveling, working in mostly Tourism and Hospitality. I am always looking to <Link className="underline" href="/contact">connect</Link> with like-minded people who are passionate about creating memorable experiences.
+                    G&apos;day, I&apos;m Tim! When I&apos;m not using the latest tech to create beautiful, interactive web experiences that have excellent performance, accessibility and SEO. I like to get outdoors, I love playing in the snow, playing my guitar, and going on adventures with my cats, Vino & Zola! Prior to finding my love of web design/development, I spent my life traveling, working in mostly Tourism and Hospitality. I am always looking to connect with like-minded people who are passionate about creating memorable web experiences.
                 </motion.p>
                 <br />
                 <br /> 

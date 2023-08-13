@@ -63,7 +63,7 @@ export default function ProAboutSection() {
                     initial={{ x: -50, opacity: 0}}
                     animate={animation2}
                     tabIndex={0}
-                    className={`${mainFont.className} text-amber-100 mx-6 text-xs xs:text-sm md:text-md xl:text-xl text-center md:text-left`}>G&apos;day, I&apos;m Tim! A self-taught web developer/designer from beautiful Northern Tasmania. I use modern technology to craft digital experiences that will make brands stand out! My designs are responsive, accessible, and built with an emphasis on performance and SEO. I&apos;m open to both freelance collaborations and contributing to a progressive team environment. If you&apos;re seeking a blend of innovation and efficiency, whether for a team or a project, let&apos;s <Link className="underline" href="/contact">connect</Link> and create unparalleled digital solutions together
+                    className={`${mainFont.className} text-amber-100 mx-6 text-xs xs:text-sm md:text-md xl:text-xl text-center md:text-left`}>G&apos;day, I&apos;m Tim! A web developer/designer from beautiful Northern Tasmania. I use modern technology to craft digital experiences that will make brands stand out! My designs are responsive, accessible, and built with an emphasis on performance and SEO. I&apos;m open to both freelance collaborations and contributing to a progressive team environment. If you&apos;re seeking a blend of innovation and efficiency, whether for a team or a project, let&apos;s connect and create unparalleled digital solutions together
                     <br />
                     <motion.br ref={ref3}
                         initial={{ x: -50, opacity: 0 }}
