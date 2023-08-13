@@ -7,7 +7,7 @@ import { Roboto } from 'next/font/google';
 import { motion, useAnimation, useInView } from "framer-motion";
 
 const roboto = Roboto({
-    weight: ['300', '400', '500'],
+    weight: ['400'],
     subsets: ['latin']
 })
 

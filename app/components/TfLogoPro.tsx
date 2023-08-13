@@ -6,7 +6,7 @@ import { Antic_Didone } from 'next/font/google';
 import { motion } from 'framer-motion';
 
 const mainFont = Antic_Didone({
-    weight: '400',
+    weight: ['400'],
     subsets: ['latin']
 })
 

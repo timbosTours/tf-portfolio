@@ -7,7 +7,7 @@ import { Monoton } from 'next/font/google'
 import { motion } from 'framer-motion';
 
 const carter = Carter_One({
-    weight: '400',
+    weight: ['400'],
     subsets: ['latin']
 })
 

@@ -8,7 +8,6 @@ import { Roboto } from 'next/font/google';
 import {useEffect, useRef} from 'react'
 import { motion, useAnimation} from 'framer-motion'
 import { useTheme } from "next-themes";
-import SnowFlakeAnimation from "./SnowFlakeAnimation";
 
 const carter = Carter_One({
     weight: ['400'],
@@ -16,7 +15,7 @@ const carter = Carter_One({
 })
 
 const roboto = Roboto({
-    weight: ['300', '400', '500'],
+    weight: ['400'],
     subsets: ['latin']
 })
 
