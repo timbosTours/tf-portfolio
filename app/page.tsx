@@ -2,21 +2,18 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import { Antic_Didone } from 'next/font/google';
 import dynamic from 'next/dynamic';
-import SnowFlakeAnimation from './components/SnowFlakeAnimation';
 
 import ProHeroSection from './components/ProHeroSection';
-const ChillHeroSection = dynamic(() => import('./components/ChillHeroSection'), {
-  
-});
+const ChillHeroSection = dynamic(() => import('./components/ChillHeroSection'), {});
+
 const ProjectsSection = dynamic(() => import('./components/ProjectsSection'), {
   ssr: false,
 });
-const ProAboutSection = dynamic(() => import('./components/ProAboutSection'), {
-  
-});
-const ChillAboutSection = dynamic(() => import('./components/ChillAboutSection'), {
+const ProAboutSection = dynamic(() => import('./components/ProAboutSection'), {});
 
-});
+const ChillAboutSection = dynamic(() => import('./components/ChillAboutSection'), {});
+
+const SnowFlakeAnimation = dynamic(() => import('./components/SnowFlakeAnimation'), {});
 
 const mainFont = Antic_Didone({
     weight: ['400'],
