@@ -76,7 +76,7 @@ export default function ProjectsSlider() {
                         <div key={project._id} className="carousel__cell ">
                         <a href={`projects/${project.slug}`}>
                                 <Image
-                                    className="rounded-3xl" src={project.image} alt={project.name} width={500} height={200} />
+                                    className="rounded-3xl" src={project.image} alt={project.name} width={400} height={160} />
                             </a>
                         </div>
                     ))}
