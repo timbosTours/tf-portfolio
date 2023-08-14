@@ -92,7 +92,7 @@ export default function ProHeroSection() {
                 animate={animation3}
                 transition={{ delay: 0.9 }}
                 tabIndex={0}
-                className={`${roboto.className} text-xs md:text-base font-light text-amber-100 mx-auto mt-4 `}>Building where the possibilities are infinite.
+                className={`${roboto.className} text-xs md:text-base font-light text-amber-100 mx-auto mt-4 `}>Beautiful web experiences, Infinite possibilities.
             </motion.p>
 
             {/* Infinite code SVG */}

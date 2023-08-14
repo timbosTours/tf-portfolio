@@ -98,7 +98,7 @@ export default function ChillHeroSection() {
                 initial={{ y: 50, opacity: 0 }}
                 animate={animation3}   
                 tabIndex={0}
-                className={`${roboto.className} font-medium text-xs xs:text-base lg:text-lg text-zinc-800 mx-auto mt-4 `}>Building where the possibilities are infinite.
+                className={`${roboto.className} font-medium text-xs xs:text-base lg:text-lg text-zinc-800 mx-auto mt-4 `}>Building beautiful web experiences, Exploring infinite possibilities. 
             </motion.p>
             <br className='xs:mb-8 sm:mb-44' />
             
@@ -115,7 +115,7 @@ export default function ChillHeroSection() {
                     <motion.div
                                     whileHover={{ scale: 1.1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 } }}
                                     whileTap={{scale: 0.9}}
-                    className={`${carter.className} w-52 sm:w-60 md:w-72 lg:w-96 bg-gradient-to-t from-white  via-columbiaBlue-500 to-columbiaBlue-700 bg-clip-text text-transparent py-2 lg:py-4 text-center mt-auto text-2xl lg:text-5xl rounded-lg border-2 border-zinc-800 md:mt-24`}                
+                    className={`${carter.className} w-52 sm:w-56 md:w-72 lg:w-96 bg-gradient-to-t from-white  via-columbiaBlue-500 to-columbiaBlue-700 bg-clip-text text-transparent py-2 lg:py-4 text-center mt-auto text-2xl lg:text-5xl rounded-lg border-2 border-zinc-800 md:mt-24`}                
                     >
                                     Reach Out!
                                 </motion.div>

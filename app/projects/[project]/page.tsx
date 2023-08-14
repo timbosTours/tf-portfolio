@@ -21,7 +21,7 @@ const carter = Carter_One({
 })
 
 const roboto = Roboto({
-    weight: ['300', '400'],
+    weight: ['400'],
     subsets: ['latin']
 })
 
