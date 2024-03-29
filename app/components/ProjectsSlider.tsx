@@ -8,7 +8,6 @@ import { getProjects } from "@/sanity/sanity-utils";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-
 type Project = {
     _id: string;
     url: string;
@@ -16,19 +15,18 @@ type Project = {
     name: string;
     slug: string
 };
-    
+
+const animation = { duration: 10000, easing: (t: number) => t }
 
 const carousel: KeenSliderPlugin = (slider) => {
     const z = window.innerWidth * 1;
     function rotate() {
-        // Check if slider.track.details is not null before using it
         if (slider.track && slider.track.details) {
             const deg = 360 * slider.track.details.progress;
             slider.container.style.transform = `translateZ(-${z}px) rotateY(${-deg}deg)`;
         }
     }
     slider.on("created", () => {
-        // Check if slider.slides is not null before using it
         if (slider.slides) {
             const deg = 360 / slider.slides.length;
             slider.slides.forEach((element, idx) => {
@@ -36,11 +34,22 @@ const carousel: KeenSliderPlugin = (slider) => {
             });
         }
         rotate();
+        if (window.innerWidth > 960) {
+            slider.moveToIdx(5, true, animation)
+        }
     });
     slider.on("detailsChanged", rotate);
+    slider.on("updated", () => {
+        if (window.innerWidth > 960) {
+            slider.moveToIdx(slider.track.details.abs + 5, true, animation)
+        }
+    });
+    slider.on("animationEnded", () => {
+        if (window.innerWidth > 960) {
+            slider.moveToIdx(slider.track.details.abs + 5, true, animation)
+        }
+    });
 };
-
-
 
 export default function ProjectsSlider() {
     const [projects, setProjects] = useState<Project[]>([]);
@@ -51,9 +60,9 @@ export default function ProjectsSlider() {
 
     const [sliderRef] = useKeenSlider<HTMLDivElement>(
         {
-        loop: true,
-        selector: ".carousel__cell",
-        renderMode: "custom",
+            loop: true,
+            selector: ".carousel__cell",
+            renderMode: "custom",
             mode: "snap",
         },
         [carousel]
@@ -61,28 +70,30 @@ export default function ProjectsSlider() {
 
     useEffect(() => {
         const fetchData = async () => {
-        const data = await getProjects();
-        setProjects(data);
+            const data = await getProjects();
+            setProjects(data);
         };
 
         fetchData();
     }, []);
 
+    // Check if window is defined (so if we're on the server-side, we don't run this)
+    const isLargeScreen = typeof window !== 'undefined' && window.innerWidth > 960;
+
     return (
-        <motion.div style={{rotateZ, rotateX, scale}} key={projects.length} className="wrapper ">
+        <motion.div style={isLargeScreen ? {rotateZ, rotateX, scale} : {}} key={projects.length} className="wrapper ">
             <div className="scene">
                 <div className="carousel keen-slider " ref={sliderRef}>
-                    {projects.map((project) => (
-                        <div key={project._id} className="carousel__cell ">
-                        <a href={`projects/${project.slug}`}>
-                                <Image
-                                    className="rounded-3xl" src={project.image} alt={project.name} width={400} height={160} />
-                            </a>
-                        </div>
-                    ))}
+                        {projects.map((project) => (
+                            <div key={project._id} className="carousel__cell ">
+                            <a href={`projects/${project.slug}`}>
+                                    <Image
+                                        className="rounded-3xl" src={project.image} alt={project.name} width={400} height={160} />
+                                </a>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
-
-        </motion.div>
-    );
-}
+            </motion.div>
+        );
+    }
